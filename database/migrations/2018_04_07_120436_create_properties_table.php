@@ -18,16 +18,20 @@ class CreatePropertiesTable extends Migration
             $table->string('property_id');
             $table->string('property_name');
             $table->string('location');
-            $table->string('gmap_latitude');
-            $table->string('gmap_longitude');
+            $table->string('gmap_latitude')->nullable();
+            $table->string('gmap_longitude')->nullable();
             $table->text('description')->nullable();
             $table->string('type');
             $table->string('lot_area')->nullable();
             $table->string('floor_area')->nullable();
             $table->string('bedrooms')->nullable();
             $table->string('tnb')->nullable();
-            $table->string('car_garage')->nullabe();
+            $table->string('car_garage')->nullable();
             $table->string('amenities')->nullable();
+
+            $table->boolean('published')->default(false);
+            $table->boolean('featured')->default(false);
+            $table->decimal('price', 8, 2);
             $table->softDeletes();
             $table->timestamps();
         });

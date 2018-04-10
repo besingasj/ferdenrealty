@@ -17,10 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function() {
+    return redirect('/dashboard/properties');
+})->name('home');
 
 
-Route::group(['middleware' => ["auth"]], function() {
+Route::group(['middleware' => ["auth"], 'prefix' => 'dashboard'], function() {
      Route::resource("properties", "PropertyController");
 
      Route::resource("agents", "AgentController");

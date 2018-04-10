@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PropertyRequest;
+use App\Models\Property;
 use Illuminate\Http\Request;
 
 class PropertyController extends Controller
@@ -23,7 +25,7 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        //
+        return view('properties.create');
     }
 
     /**
@@ -32,9 +34,42 @@ class PropertyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PropertyRequest $request)
     {
-        //
+        /*'property_id',
+        'property_name',
+        'description',
+        'location',
+        'gmap_longlitude',
+        'gmap_latitude',
+        'type',
+        'lot_area',
+        'floor_area',
+        'bedrooms',
+        'tnb',
+        'car_garage',
+        'amenities'*/
+        $property = new Property;
+        $property->property_name = $request->property_name;
+        $property->property_id = $request->property_id;
+        $property->description = $request->description;
+        $property->location = $request->location;
+        $property->gmap_longitude = $request->gmap_longitude;
+        $property->gmap_latitude = $request->gmap_latitude;
+        $property->type = $request->type;
+        $property->lot_area = $request->lot_area;
+        $property->floor_area = $request->floor_area;
+        $property->bedrooms = $request->bedrooms;
+        $property->tnb = $request->tnb;
+        $property->car_garage = $request->car_garage;
+        $property->amenities = $request->amenities;
+        $property->price = $request->price;
+
+        $property->save();
+
+        return redirect()->route('properties.show', [
+            'id' => $property->id
+        ])->with('property_success_message', 'new property saved');
     }
 
     /**
@@ -45,7 +80,11 @@ class PropertyController extends Controller
      */
     public function show($id)
     {
-        //
+        $property = Property::findOrFail($id);
+
+        return view('properties.show', [
+            'property' => $property
+        ]);
     }
 
     /**
@@ -66,9 +105,9 @@ class PropertyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PropertyRequest $request, $id)
     {
-        //
+        dd($request->all());
     }
 
     /**

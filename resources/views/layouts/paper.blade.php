@@ -216,7 +216,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
 
-        demo.initChartist();
+        // demo.initChartist();
 
         // $.notify({
         //     icon: 'ti-gift',
