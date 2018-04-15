@@ -13,23 +13,23 @@
 
 
     <!-- Bootstrap core CSS     -->
-    <link href="{{ asset('paper/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/paper/css/bootstrap.min.css') }}" rel="stylesheet" />
 
     <!-- Animation library for notifications   -->
-    <link href="{{ asset('paper/css/animate.min.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('public/paper/css/animate.min.css') }}" rel="stylesheet"/>
 
     <!--  Paper Dashboard core CSS    -->
-    <link href="{{ asset('paper/css/paper-dashboard.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('public/paper/css/paper-dashboard.css') }}" rel="stylesheet"/>
 
 
     <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="{{ asset('paper/css/demo.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/paper/css/demo.css') }}" rel="stylesheet" />
 
 
     <!--  Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
-    <link href="{{ asset('paper/css/themify-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/paper/css/themify-icons.css') }}" rel="stylesheet">
 
 </head>
 <body>
@@ -57,47 +57,11 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('agents.index') }}">
+                    <a href="{{ route('properties.index') }}">
                         <i class="ti-user"></i>
                         <p>Agents</p>
                     </a>
                 </li>
-                {{--<li>--}}
-                    {{--<a href="table.html">--}}
-                        {{--<i class="ti-view-list-alt"></i>--}}
-                        {{--<p>Table List</p>--}}
-                    {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                    {{--<a href="typography.html">--}}
-                        {{--<i class="ti-text"></i>--}}
-                        {{--<p>Typography</p>--}}
-                    {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                    {{--<a href="icons.html">--}}
-                        {{--<i class="ti-pencil-alt2"></i>--}}
-                        {{--<p>Icons</p>--}}
-                    {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                    {{--<a href="maps.html">--}}
-                        {{--<i class="ti-map"></i>--}}
-                        {{--<p>Maps</p>--}}
-                    {{--</a>--}}
-                {{--</li>--}}
-                {{--<li>--}}
-                    {{--<a href="notifications.html">--}}
-                        {{--<i class="ti-bell"></i>--}}
-                        {{--<p>Notifications</p>--}}
-                    {{--</a>--}}
-                {{--</li>--}}
-                {{--<li class="active-pro">--}}
-                    {{--<a href="upgrade.html">--}}
-                        {{--<i class="ti-export"></i>--}}
-                        {{--<p>Upgrade to PRO</p>--}}
-                    {{--</a>--}}
-                {{--</li>--}}
             </ul>
         </div>
     </div>
@@ -192,26 +156,26 @@
 </body>
 
 <!--   Core JS Files   -->
-<script src="{{ asset('paper/js/jquery-1.10.2.js') }}" type="text/javascript"></script>
-<script src="{{ asset('paper/js/bootstrap.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('public/paper/js/jquery-1.10.2.js') }}" type="text/javascript"></script>
+<script src="{{ asset('public/paper/js/bootstrap.min.js') }}" type="text/javascript"></script>
 
 <!--  Checkbox, Radio & Switch Plugins -->
-<script src="{{ asset('paper/js/bootstrap-checkbox-radio.js') }}"></script>
+<script src="{{ asset('public/paper/js/bootstrap-checkbox-radio.js') }}"></script>
 
 <!--  Charts Plugin -->
-<script src="{{ asset('paper/js/chartist.min.js') }}"></script>
+<script src="{{ asset('public/paper/js/chartist.min.js') }}"></script>
 
 <!--  Notifications Plugin    -->
-<script src="{{ asset('paper/js/bootstrap-notify.js') }}"></script>
+<script src="{{ asset('public/paper/js/bootstrap-notify.js') }}"></script>
 
 <!--  Google Maps Plugin    -->
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 
 <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
-<script src="{{ asset('paper/js/paper-dashboard.js') }}"></script>
+<script src="{{ asset('public/paper/js/paper-dashboard.js') }}"></script>
 
 <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-<script src="{{ asset('paper/js/demo.js') }}"></script>
+<script src="{{ asset('public/paper/js/demo.js') }}"></script>
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -229,5 +193,7 @@
 
     });
 </script>
+
+@stack("properties_scripts")
 
 </html>

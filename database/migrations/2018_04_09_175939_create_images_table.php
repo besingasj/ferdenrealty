@@ -15,7 +15,13 @@ class CreateImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->integer('property_id')->unsigned();
+            $table->foreign('property_id')->references('id')->on('properties');
+
+            $table->text('path');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

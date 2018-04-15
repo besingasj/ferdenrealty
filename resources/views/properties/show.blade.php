@@ -97,10 +97,14 @@
                                 <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
                                     <label>Type</label>
                                     <select name="type" class="form-control border-input">
+                                        @php
+                                            $type_values = ["Commercial Space", "House and Lot", "Condo"];
+                                        @endphp
                                         <option value="">--- Select ---</option>
-                                        <option value="Commercial Space">Commercial Space</option>
-                                        <option value="House and Lot">House N Lot</option>
-                                        <option value="Condo">Condo</option>
+                                        @foreach($type_values as $value)
+                                            <option value="{{ $value }}" {{ ($property->type === $value) ? 'selected' : '' }}>{{ $value }}</option>
+                                        @endforeach
+
                                     </select>
                                     @if ($errors->has('type'))
                                         <span>
@@ -168,17 +172,35 @@
                     <p class="text-muted">Custom Attributes</p>
                 </div>
                 <div class="content">
-                    <form action="">
-                        <div class="row">
-                            <div class="form-group">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control border-input">
+                    @if (session('additional_details_success_message'))
+                        <p class="text-success">{{ session('additional_details_success_message') }}</p>
+                    @endif
+                    <form action="{{ route("additional_details.new", [ 'property_id' => $property->id ]) }}" method="post" id="propertiesAdditionalDetails">
+                        @csrf
+                        <div id="additionalDetailsContainer">
+                            @php
+                                $additionalDetailsCount = $property->additionalDetails->count();
+                                $additionalDetailsIteration = 1;
+                            @endphp
+                            @foreach ($property->additionalDetails as $detail)
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-6">
+                                            <input type="text" name="additional[detail_{{ $additionalDetailsIteration }}][field]" class="form-control border-input" value="{{ $detail->fields }}" placeholder="custom field">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" name="additional[detail_{{ $additionalDetailsIteration }}][value]" class="form-control border-input" value="{{ $detail->value }}" placeholder="value">
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control border-input">
-                                </div>
-                            </div>
+                                @php
+                                    $additionalDetailsIteration++;
+                                @endphp
+                            @endforeach
                         </div>
+
+
+                        <button class="btn btn-info btn-fill" id="addNewAdditionalFields">Add Fields</button> <input type="submit" class="btn btn-success btn-fill" value="Save">
                     </form>
                 </div>
             </div>
@@ -190,9 +212,51 @@
                     <p class="text-muted">Primary Picture</p>
                 </div>
                 <div class="content">
+                    @include("properties.includes.featured_image")
+                </div>
+            </div>
+        </div>
 
+        <div class="col-lg-4 col-md-5">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">Gallery Images</h4>
+                    <p class="text-muted">Sliding Images</p>
+                </div>
+                <div class="content">
+                    @include("properties.includes.images")
                 </div>
             </div>
         </div>
     </div>
 @endsection
+
+@push("properties_scripts")
+    <script  type="text/javascript">
+        $(document).ready(function(e) {
+            var addNewAdditionalFieldsBtn = $("#addNewAdditionalFields");
+            var additionalFieldsContainer = $("#additionalDetailsContainer");
+
+            var fieldIteration = "{{ $property->additionalDetails->count() + 1 }}";
+
+            var htmlForm ='<div class="row">\n' +
+                '                            <div class="form-group">\n' +
+                '                                <div class="col-md-6">\n' +
+                '                                    <input type="text" name="additional[detail_' + fieldIteration + '][field]" class="form-control border-input" placeholder="custom field">\n' +
+                '                                </div>\n' +
+                '                                <div class="col-md-6">\n' +
+                '                                    <input type="text" name="additional[detail_' + fieldIteration + '][value]" class="form-control border-input" placeholder="value">\n' +
+                '                                </div>\n' +
+                '                            </div>\n' +
+                '                        </div>';
+            
+            addNewAdditionalFieldsBtn.click(function (e) {
+                additionalFieldsContainer.append(htmlForm);
+                fieldIteration++;
+
+                e.preventDefault();
+                return false;
+            });
+        });
+    </script>
+@endpush

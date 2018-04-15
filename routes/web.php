@@ -25,5 +25,8 @@ Route::get('/home', function() {
 Route::group(['middleware' => ["auth"], 'prefix' => 'dashboard'], function() {
      Route::resource("properties", "PropertyController");
 
-     Route::resource("agents", "AgentController");
+     Route::post("additional_details/{property_id}", "AdditionalDetailController@saveNew")->name("additional_details.new");
+
+     Route::post("upload/featured/{property_id}", "ImageController@featured")->name("image.featured");
+     Route::post("upload/gallery/{property_id}", "ImageController@gallery")->name("image.gallery");
 });

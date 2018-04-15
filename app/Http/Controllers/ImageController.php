@@ -1,0 +1,82 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Requests\FeaturedImageRequest;
+use App\Models\Property;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
+
+class ImageController extends Controller
+{
+    public function featured(FeaturedImageRequest $request, $property_id)
+    {
+        $property = Property::find($property_id);
+
+        if (is_null($property)) {
+            return back()->withErrors([
+                'featured_image' => "No property found."
+            ]);
+        }
+        $image = Image::make($request->featured_image);
+
+        if ($image->width() !== 1200 || $image->height() !== 680) {
+            return back()->withErrors([
+                'featured_image' => 'Featured image must have 1200x600 dimension.'
+            ]);
+        }
+
+        $filename = "f_" . $property_id . "_" . Carbon::now()->timestamp;
+
+        $path = $request->featured_image->storeAs('featured', $filename, 'public');
+
+//        $thumbnail = "/" . $filename . "-thumb";
+//        $thumb = $image->resize(660, 600, function($constraint) {
+//            $constraint->aspectRatio();
+//        });
+//
+//        Storage::putFileAs('thumb', $thumb, $thumbnail, 'public');
+
+        $property->featured_image = $path;
+        $property->save();
+
+        return redirect()->route('properties.show', [
+            'id' => $property->id
+        ])->with('featured_image_success_message', 'Featured Image saved');
+    }
+
+    public function gallery(Request $request, $property_id)
+    {
+        $property = Property::find($property_id);
+
+        if (is_null($property)) {
+            return back()->withErrors([
+                'sliding_images' => "No property found."
+            ]);
+        }
+
+        foreach ($request->sliding_images as $slidingImage) {
+            $image = Image::make($slidingImage);
+
+            if ($image->width() !== 850 || $image->height() !== 570) {
+                return back()->withErrors([
+                    'sliding_images' => 'Sliding image must have 850x570 dimension.'
+                ]);
+            }
+
+            $filename =  "S_" . $property_id . "_" . Carbon::now()->timestamp;
+            $path = $slidingImage->storeAs('slider', $filename, 'public');
+
+            $newSlidingImage = new \App\Models\Image;
+            $newSlidingImage->property_id = $property_id;
+            $newSlidingImage->path = $path;
+            $newSlidingImage->save();
+        }
+
+        return redirect()->route('properties.show', [
+            'id' => $property->id
+        ])->with('sliding_image_success_message', 'Image saved');
+    }
+}

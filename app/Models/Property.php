@@ -3,17 +3,18 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Property extends Model
 {
-//    protected $table = "properties";
-//    protected $connection = "mysql";
+    use SoftDeletes;
 
     protected $fillable  = [
         'property_id',
         'property_name',
         'description',
         'location',
+        'featured_image',
         'gmap_longlitude',
         'gmap_latitude',
         'type',
@@ -25,4 +26,9 @@ class Property extends Model
         'amenities',
         'price'
     ];
+
+    public function additionalDetails()
+    {
+        return $this->hasMany(AdditionalDetails::class);
+    }
 }
