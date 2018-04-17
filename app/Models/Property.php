@@ -39,4 +39,9 @@ class Property extends Model
     {
         return $this->hasMany(Image::class);
     }
+
+    public function getPriceAttribute($value)
+    {
+        return number_format($value);
+    }
 }
