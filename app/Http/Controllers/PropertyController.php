@@ -15,7 +15,10 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        return view('properties.index');
+        $properties = Property::all();
+        return view('properties.index', [
+            'properties' => $properties
+        ]);
     }
 
     /**
@@ -25,7 +28,18 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        return view('properties.create');
+        $cities = [
+            'taytay',
+            'cainta',
+            'antipolo',
+            'binangonan',
+            'teresa',
+            'pasig',
+            'quezon'
+        ];
+        return view('properties.create', [
+            'cities' => $cities
+        ]);
     }
 
     /**
@@ -54,8 +68,10 @@ class PropertyController extends Controller
         $property->property_id = $request->property_id;
         $property->description = $request->description;
         $property->location = $request->location;
+        $property->city = $request->city;
         $property->gmap_longitude = $request->gmap_longitude;
         $property->gmap_latitude = $request->gmap_latitude;
+        $property->youtube_url = $request->youtube_url;
         $property->type = $request->type;
         $property->lot_area = $request->lot_area;
         $property->floor_area = $request->floor_area;
@@ -82,8 +98,19 @@ class PropertyController extends Controller
     {
         $property = Property::findOrFail($id);
 
+        $cities = [
+            'taytay',
+            'cainta',
+            'antipolo',
+            'binangonan',
+            'teresa',
+            'pasig',
+            'quezon'
+        ];
+
         return view('properties.show', [
-            'property' => $property
+            'property' => $property,
+            'cities' => $cities
         ]);
     }
 
@@ -107,7 +134,29 @@ class PropertyController extends Controller
      */
     public function update(PropertyRequest $request, $id)
     {
-        dd($request->all());
+        $property = Property::findOrFail($id);
+        $property->property_name = $request->property_name;
+        $property->property_id = $request->property_id;
+        $property->description = $request->description;
+        $property->location = $request->location;
+        $property->city = $request->city;
+        $property->gmap_longitude = $request->gmap_longitude;
+        $property->gmap_latitude = $request->gmap_latitude;
+        $property->youtube_url = $request->youtube_url;
+        $property->type = $request->type;
+        $property->lot_area = $request->lot_area;
+        $property->floor_area = $request->floor_area;
+        $property->bedrooms = $request->bedrooms;
+        $property->tnb = $request->tnb;
+        $property->car_garage = $request->car_garage;
+        $property->amenities = $request->amenities;
+        $property->price = $request->price;
+
+        $property->save();
+
+        return redirect()->route('properties.show', [
+            'id' => $property->id
+        ])->with('property_success_message', 'new property saved');
     }
 
     /**
@@ -119,5 +168,17 @@ class PropertyController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function toggleFeatured($property_id)
+    {
+        $property = Property::find($property_id);
+
+        $property->featured = !$property->featured;
+        $property->save();
+
+        return redirect()->route('properties.index')->with([
+            'toogleFeatured_success_message' => $property->featured ? "Featured Property" : "Unfeatured Property"
+        ]);
     }
 }

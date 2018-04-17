@@ -63,13 +63,30 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group{{ $errors->has('location') ? ' has-error' : '' }}">
                                     <label>Location</label>
                                     <input type="text" name="location" class="form-control border-input" placeholder="location" value="{{ $property->location }}">
                                     @if ($errors->has('location'))
                                         <span>
                                         <strong class="text-danger">{{ $errors->first('location') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
+                                    <label>City / Municipality</label>
+                                    <select name="city" class="form-control border-input">
+                                        <option value="">--- Select ---</option>
+                                        @foreach ($cities as $city)
+                                            <option value="{{ $city }}"  {{ ($property->city === $city) ? 'selected' : '' }}>{{ $city }}</option>
+                                        @endforeach
+                                    </select>
+                                    @if ($errors->has('city'))
+                                        <span>
+                                        <strong class="text-danger">{{ $errors->first('city') }}</strong>
                                     </span>
                                     @endif
                                 </div>
@@ -87,6 +104,15 @@
                                     <div class="col-md-6">
                                         <input type="text" name="gmap_longitude" class="form-control border-input" placeholder="longitude" value="{{ $property->gmap_longitude }}">
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Youtube Video</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control border-input" name="youtube_url" placeholder="Youtube Video URL" value="{{ $property->youtube_url }}">
                                 </div>
                             </div>
                         </div>

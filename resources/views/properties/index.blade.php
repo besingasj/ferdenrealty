@@ -9,21 +9,44 @@
                     Properties
                     <a href="{{ route('properties.create') }}" class="btn btn-success pull-right">Add Property</a>
                 </div>
-                <div class="card-body">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>NAME</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Mark Kevin Besinga</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                <div class="content table-responsive table-full-width">
+                    @if (count($properties) > 0)
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NAME</th>
+                                <th>Picture</th>
+                                <th>LOCATION</th>
+                                <th>CITY</th>
+                                <th>Featured?</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach ($properties as $property)
+                                    <tr>
+                                        <td>{{ $property->property_id }}</td>
+                                        <td><a href="{{ route("properties.show", ['property_id' => $property->id]) }}">{{ $property->property_name }}</a></td>
+                                        <td>
+                                            <img width="200" src="{{ asset('public/storage/P_' . $property->id . '-thumb.jpg') }}" alt="">
+                                        </td>
+                                        <td>{{ $property->location }}</td>
+                                        <td>{{ $property->city }}</td>
+                                        <td>
+                                            @if ($property->featured)
+                                                <a class="btn btn-success btn-fill" href="{{ route('properties.toggleFeatured', ['id' => $property->id]) }}">featured</a>
+                                                @else
+                                                <a class="btn btn-success" href="{{ route('properties.toggleFeatured', ['id' => $property->id]) }}">featured</a>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        @else
+                        <p class="text-primary text-center">No property. Please add one</p>
+                    @endif
                 </div>
             </div>
         </div>

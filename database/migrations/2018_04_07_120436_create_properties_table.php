@@ -18,6 +18,7 @@ class CreatePropertiesTable extends Migration
             $table->string('property_id');
             $table->string('property_name');
             $table->string('location');
+            $table->string('city');
             $table->text('featured_image')->nullable();
             $table->string('gmap_latitude')->nullable();
             $table->string('gmap_longitude')->nullable();
@@ -29,6 +30,7 @@ class CreatePropertiesTable extends Migration
             $table->string('tnb')->nullable();
             $table->string('car_garage')->nullable();
             $table->string('amenities')->nullable();
+            $table->string('youtube_url')->nullable();
 
             $table->boolean('published')->default(false);
             $table->boolean('featured')->default(false);

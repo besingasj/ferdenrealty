@@ -22,7 +22,7 @@ class ImageController extends Controller
         }
         $image = Image::make($request->featured_image);
 
-        if ($image->width() !== 1200 || $image->height() !== 680) {
+        if ($image->width() !== 2000 || $image->height() !== 1000) {
             return back()->withErrors([
                 'featured_image' => 'Featured image must have 1200x600 dimension.'
             ]);
@@ -32,12 +32,10 @@ class ImageController extends Controller
 
         $path = $request->featured_image->storeAs('featured', $filename, 'public');
 
-//        $thumbnail = "/" . $filename . "-thumb";
-//        $thumb = $image->resize(660, 600, function($constraint) {
-//            $constraint->aspectRatio();
-//        });
-//
-//        Storage::putFileAs('thumb', $thumb, $thumbnail, 'public');
+        $thumbnail = "P_" . $property_id . "-thumb.jpg";
+        $thumb = $image->fit(660, 600);
+
+        Storage::disk('public')->put($thumbnail, (string) $thumb->encode());
 
         $property->featured_image = $path;
         $property->save();
@@ -57,7 +55,10 @@ class ImageController extends Controller
             ]);
         }
 
+        $count = 0;
+
         foreach ($request->sliding_images as $slidingImage) {
+            $count++;
             $image = Image::make($slidingImage);
 
             if ($image->width() !== 850 || $image->height() !== 570) {
@@ -66,7 +67,7 @@ class ImageController extends Controller
                 ]);
             }
 
-            $filename =  "S_" . $property_id . "_" . Carbon::now()->timestamp;
+            $filename =  "S_" . $property_id . "_" . Carbon::now()->timestamp . "_" . $count;
             $path = $slidingImage->storeAs('slider', $filename, 'public');
 
             $newSlidingImage = new \App\Models\Image;
@@ -78,5 +79,16 @@ class ImageController extends Controller
         return redirect()->route('properties.show', [
             'id' => $property->id
         ])->with('sliding_image_success_message', 'Image saved');
+    }
+
+    public function delete($image_id)
+    {
+        $image = \App\Models\Image::find($image_id);
+
+        if (!is_null($image)) {
+            $image->delete();
+        }
+
+        return back()->with('sliding_image_success_message', 'Image deleted.');
     }
 }

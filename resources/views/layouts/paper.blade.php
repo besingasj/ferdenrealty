@@ -56,12 +56,12 @@
                         <p>Properties</p>
                     </a>
                 </li>
-                <li>
-                    <a href="{{ route('properties.index') }}">
-                        <i class="ti-user"></i>
-                        <p>Agents</p>
-                    </a>
-                </li>
+                {{--<li>--}}
+                    {{--<a href="{{ route('agents.index') }}">--}}
+                        {{--<i class="ti-user"></i>--}}
+                        {{--<p>Agents</p>--}}
+                    {{--</a>--}}
+                {{--</li>--}}
             </ul>
         </div>
     </div>

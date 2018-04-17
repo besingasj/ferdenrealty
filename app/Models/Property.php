@@ -14,9 +14,11 @@ class Property extends Model
         'property_name',
         'description',
         'location',
+        'city',
         'featured_image',
         'gmap_longlitude',
         'gmap_latitude',
+        'youtube_url',
         'type',
         'lot_area',
         'floor_area',
@@ -24,11 +26,17 @@ class Property extends Model
         'tnb',
         'car_garage',
         'amenities',
-        'price'
+        'price',
+        'featured'
     ];
 
     public function additionalDetails()
     {
         return $this->hasMany(AdditionalDetails::class);
+    }
+
+    public function images()
+    {
+        return $this->hasMany(Image::class);
     }
 }
