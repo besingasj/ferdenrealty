@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'PageController@index')->name('page.index');
+Route::get('/properties/{city?}', 'PageController@properties')->name('page.properties');
+Route::get('/properties/details/{property_id}', 'PageController@propertyDetails')->name('page.property.details');
 
 Auth::routes();
 

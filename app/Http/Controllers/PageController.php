@@ -19,4 +19,18 @@ class PageController extends Controller
             'featuredProperties' => $featuredProperties
         ]);
     }
+
+    public function properties($city = null)
+    {
+        $properties = Property::all();
+
+        return view('realplaces.properties', [
+            'properties' => $properties
+        ]);
+    }
+
+    public function propertyDetails($property_id)
+    {
+        return view('realplaces.property_details');
+    }
 }

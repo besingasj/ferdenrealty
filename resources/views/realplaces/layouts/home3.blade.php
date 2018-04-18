@@ -5,36 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ env('APP_NAME', "Ferden Realty Corporation") }}</title>
-    <link rel="icon" href="public/realplaces/images/cropped-ms-icon-310x310-32x32.png" sizes="32x32" />
-    <link rel="icon" href="public/realplaces/images/cropped-ms-icon-310x310-192x192.png" sizes="192x192" />
-    <link rel="apple-touch-icon-precomposed" href="public/realplaces/images/cropped-ms-icon-310x310-180x180.png">
+    <link rel="icon" href="{{ asset('public/realplaces/images/cropped-ms-icon-310x310-32x32.png') }}" sizes="32x32" />
+    <link rel="icon" href="{{ asset('public/realplaces/images/cropped-ms-icon-310x310-192x192.png') }}" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="{{ asset('public/realplaces/images/cropped-ms-icon-310x310-180x180.png') }}">
     <!-- Google font-->
     <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic,900' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Dosis:400,700,600,500' rel='stylesheet' type='text/css'>
     <!-- Include the flexslider stylesheet -->
-    <link href="public/realplaces/js/flexslider/flexslider.css" rel="stylesheet">
+    <link href="{{ asset('public/realplaces/js/flexslider/flexslider.css') }}" rel="stylesheet">
     <!-- Include the lightslider stylesheet -->
-    <link href="public/realplaces/js/lightslider/css/lightslider.min.css" rel="stylesheet">
+    <link href="{{ asset('public/realplaces/js/lightslider/css/lightslider.min.css') }}" rel="stylesheet">
     <!-- Include the owl-carousel stylesheet -->
-    <link href="public/realplaces/js/owl.carousel/owl.carousel.css" rel="stylesheet">
+    <link href="{{ asset('public/realplaces/js/owl.carousel/owl.carousel.css') }}" rel="stylesheet">
     <!-- Include the swipebox stylesheet -->
-    <link href="public/realplaces/js/swipebox/css/swipebox.min.css" rel="stylesheet">
+    <link href="{{ asset('public/realplaces/js/swipebox/css/swipebox.min.css') }}" rel="stylesheet">
     <!-- Include the select2 stylesheet -->
-    <link href="public/realplaces/js/select2/select2.css" rel="stylesheet">
+    <link href="{{ asset('public/realplaces/js/select2/select2.css') }}" rel="stylesheet">
     <!-- Include the font-awesome stylesheet -->
-    <link href="public/realplaces/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ asset('public/realplaces/css/font-awesome.min.css') }}" rel="stylesheet">
     <!-- Include the select2 stylesheet -->
-    <link href="public/realplaces/css/animate.css" rel="stylesheet">
-    <link href="public/realplaces/js/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="{{ asset('public/realplaces/css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/realplaces/js/magnific-popup/magnific-popup.css') }}" rel="stylesheet">
     <!-- Main stylesheet -->
-    <link rel="stylesheet" href="public/realplaces/css/main.css"/>
+    <link rel="stylesheet" href="{{ asset('public/realplaces/css/main.css') }}"/>
     <!-- Default Theme stylesheet -->
-    <link rel="stylesheet" href="public/realplaces/css/theme.css"/>
+    <link rel="stylesheet" href="{{ asset('public/realplaces/css/theme.css') }}"/>
 </head>
 <body class="inspiry-slider-two">
 <div class="page-loader">
-    <img class="page-loader-img" src="public/realplaces/images/page-loader-img.gif" alt="Page Loader"/>
+    <img class="page-loader-img" src="{{ asset('public/realplaces/images/page-loader-img.gif') }}" alt="Page Loader"/>
 </div>
 <div id="mobile-header" class="mobile-header hidden-md hidden-lg">
     <div class="contact-number">
@@ -82,8 +82,8 @@
             <div class="col-lg-3 zero-horizontal-padding">
                 <div id="site-logo" class="site-logo">
                     <div class="logo-inner-wrapper">
-                        <a href="index.html"><img src="public/realplaces/images/logo.png" alt="Logo"/></a>
-                        <small class="tag-line">Coolest Real Estate Theme Ever</small>
+                        <a href="{{ route('page.index') }}"><img src="{{ asset('public/realplaces/images/fr-logo.png') }}" alt="Logo"/></a>
+                        <small class="tag-line">Ferden Realty Corporation</small>
                     </div>
                 </div>
             </div>
@@ -116,25 +116,25 @@
                     <nav id="site-main-nav" class="site-main-nav">
                         <ul class="main-menu clearfix">
                             <li class="current-menu-item">
-                                <a href="index.html">Home</a>
+                                <a href="{{ route('page.index') }}">Home</a>
                             </li>
                             <li>
-                                <a href="#">Taytay</a>
+                                <a href="{{ route('page.properties', ['city' => "taytay"]) }}">Taytay</a>
                             </li>
                             <li>
-                                <a href="property-single.html">Cainta</a>
+                                <a href="{{ route('page.properties', ['city' => "cainta"]) }}">Cainta</a>
                             </li>
                             <li>
-                                <a href="blog.html">Antipolo</a>
+                                <a href="{{ route('page.properties', ['city' => "antipolo"]) }}">Antipolo</a>
                             </li>
                             <li>
-                                <a href="#">Binangonan</a>
+                                <a href="{{ route('page.properties', ['city' => "binangonan"]) }}">Binangonan</a>
                             </li>
                             <li>
-                                <a href="#">Teresa</a>
+                                <a href="{{ route('page.properties', ['city' => "teresa"]) }}">Teresa</a>
                             </li>
-                            <li><a href="contact.html">Pasig</a></li>
-                            <li><a href="contact.html">Quezon</a></li>
+                            <li><a href="{{ route('page.properties', ['city' => "pasig"]) }}">Pasig</a></li>
+                            <li><a href="{{ route('page.properties', ['city' => "quezon"]) }}">Quezon</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -152,10 +152,10 @@
         <div class="row">
             <div class="col-lg-3 footer-logo">
                 <a href="#">
-                    <img class="img-responsive" src="public/realplaces/images/footer-logo.png" alt="Footer Logo"/>
+                    <img class="img-responsive" src="{{ asset('public/realplaces/images/fr-footer-logo.png') }}" alt="Footer Logo"/>
                 </a>
                 <p class="copyright-text">
-                    © Copyright 2015 All rights reserved by <a href="#">Real Places</a>
+                    Ferden Realty Corporation
                 </p>
             </div>
             <div class="col-lg-9 footer-widget-area">
@@ -221,9 +221,14 @@
                         <section id="inspiry_social_media_icons-1" class="widget clearfix widget_inspiry_social_media_icons">
                             <h3 class="widget-title">Connect With Us</h3>
                             <div class="social-networks clearfix">
-                                <a class="twitter" href="#twitter" target="_blank"><i class="fa fa-twitter fa-lg"></i></a><a class="facebook" href="#facebook" target="_blank"><i class="fa fa-facebook fa-lg"></i></a>
-                                <a class="linkedin" href="#linkedin" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a><a class="google-plus" href="#google-plus" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a><a class="instagram" href="#instagram" target="_blank"><i class="fa fa-instagram fa-lg"></i></a>
-                                <a class="youtube-square" href="#youtube" target="_blank"><i class="fa fa-youtube-square fa-lg"></i></a><a class="pinterest" href="#pinterest" target="_blank"><i class="fa fa-pinterest fa-lg"></i></a><a class="rss" href="#rss" target="_blank"><i class="fa fa-rss fa-lg"></i></a>
+                                <a class="twitter" href="#" target="_blank"><i class="fa fa-twitter fa-lg"></i></a>
+                                <a class="facebook" href="#" target="_blank"><i class="fa fa-facebook fa-lg"></i></a>
+                                <a class="linkedin" href="#" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a>
+                                <a class="google-plus" href="#" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a>
+                                <a class="instagram" href="#" target="_blank"><i class="fa fa-instagram fa-lg"></i></a>
+                                <a class="youtube-square" href="#" target="_blank"><i class="fa fa-youtube-square fa-lg"></i></a>
+                                <a class="pinterest" href="#" target="_blank"><i class="fa fa-pinterest fa-lg"></i></a>
+                                <a class="rss" href="#" target="_blank"><i class="fa fa-rss fa-lg"></i></a>
                             </div>
                         </section>
                     </div>
@@ -233,142 +238,51 @@
     </div>
 </footer>
 <!-- .footer -->
-<script src="public/realplaces/js/jquery-1.12.3.min.js"></script>
-<script src="public/realplaces/js/flexslider/jquery.flexslider-min.js"></script>
-<script src="public/realplaces/js/lightslider/js/lightslider.min.js"></script>
-<script src="public/realplaces/js/select2/select2.min.js"></script>
-<script src="public/realplaces/js/owl.carousel/owl.carousel.min.js"></script>
-<script src="public/realplaces/js/swipebox/js/jquery.swipebox.min.js"></script>
-<script src="public/realplaces/js/jquery.hoverIntent.js"></script>
-<script src="public/realplaces/js/jquery.validate.min.js"></script>
-<script src="public/realplaces/js/jquery.form.js"></script>
-<script src="public/realplaces/js/transition.js"></script>
-<script src="public/realplaces/js/jquery.appear.js"></script>
-<script src="public/realplaces/js/modal.js"></script>
-<script src="public/realplaces/js/meanmenu/jquery.meanmenu.min.js"></script>
-<script src="public/realplaces/js/jquery.placeholder.min.js"></script>
-<script src="public/realplaces/js/custom.js"></script>
-<div id="login-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="login-modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="login-section modal-section">
-            <div class="form-wrapper">
-                <div class="form-heading clearfix">
-                    <span><i class="fa fa-sign-in"></i>Login</span>
-                    <button type="button" class="close close-modal-dialog " data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg"></i></button>
-                </div>
-                <form id="login-form" action="#" method="post" enctype="multipart/form-data">
-                    <div class="form-element">
-                        <label class="login-form-label" for="login-username">Username</label>
-                        <input id="login-username" name="username" type="text" class="login-form-input login-form-input-common required" autofocus="" title="* Please enter a valid username." placeholder="Username">
-                    </div>
-                    <div class="form-element">
-                        <label class="login-form-label" for="password">Password</label>
-                        <input id="password" name="password" type="password" class="login-form-input login-form-input-common required" placeholder="Password">
-                    </div>
-                    <div class="form-element">
-                        <input type="submit" class="login-form-submit login-form-input-common" value="Login">
-                    </div>
-                </form>
-                <div class="clearfix">
-                    <span class="sign-up pull-left">Not a Member?<a href="#" class="activate-section" data-section="register-section">Sign up now</a></span>
-                    <span class="forgot-password pull-right"><a href="#" class="activate-section" data-section="password-section">Forgot Password?</a></span>
-                </div>
-            </div>
-            <div class="buttons-external">
-                <div class="graphic">
-                    <span class="or">or</span>
-                    <span class="vertical-line"></span>
-                    <span class="circle"></span>
-                </div>
-                <div class="clearfix">
-                    <a class="button facebook-button" href="#"><i class="fa fa-facebook"></i>Login with Facebook</a>
-                    <a class="button google-button" href="#"><i class="fa fa-google"></i>Login with Google</a>
-                </div>
-            </div>
-        </div>
-        <!-- .login-section -->
-        <div class="password-section modal-section">
-            <div class="form-wrapper">
-                <div class="form-heading clearfix">
-                    <span>Reset Password</span>
-                    <button type="button" class="close close-modal-dialog" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg"></i></button>
-                </div>
-                <form id="forgot-form" action="#" method="post">
-                    <div class="form-element">
-                        <label class="login-form-label" for="password-reset">User Name or Email<span>*</span></label>
-                        <input id="password-reset" name="password-reset" type="text" class="login-form-input login-form-input-common email required" title="* Please provide user name or email!" placeholder="Email">
-                    </div>
-                    <div class="form-element">
-                        <input type="submit" name="user-submit" class="login-form-submit login-form-input-common" value="Reset Password">
-                    </div>
-                </form>
-                <div class="clearfix">
-                    <span class="sign-up pull-left">Not a Member?<a href="#" class="activate-section" data-section="register-section">Sign up now</a></span>
-                    <span class="login-link pull-right"><a href="#" class="activate-section" data-section="login-section">Login</a></span>
-                </div>
-            </div>
-        </div>
-        <!-- .password-reset-section -->
-        <div class="register-section modal-section">
-            <div class="form-wrapper">
-                <div class="form-heading clearfix">
-                    <span>Register</span>
-                    <button type="button" class="close close-modal-dialog" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg"></i></button>
-                </div>
-                <form id="register-form" action="#" method="post">
-                    <div class="form-element">
-                        <label class="login-form-label" for="register-username">Username<span>*</span></label>
-                        <input id="register-username" name="username" type="text" class="login-form-input login-form-input-common required" title="* Please enter a valid username." placeholder="Username">
-                    </div>
-                    <div class="form-element">
-                        <label class="login-form-label" for="user_email">Email<span>*</span></label>
-                        <input id="user_email" name="user_email" type="text" class="login-form-input login-form-input-common email required" title="* Please provide valid email address!" placeholder="Email">
-                    </div>
-                    <div class="form-element">
-                        <input type="submit" name="user-submit" class="login-form-submit login-form-input-common" value="Register">
-                    </div>
-                </form>
-                <div class="clearfix">
-                    <span class="login-link pull-left"><a href="#" class="activate-section" data-section="login-section">Login</a></span>
-                    <span class="forgot-password pull-right"><a href="#" class="activate-section" data-section="password-section">Forgot Password?</a></span>
-                </div>
-            </div>
-        </div>
-        <!-- .register-section -->
-    </div>
-    <!-- .modal-dialog -->
-</div>
-<!-- .modal -->
+<script src="{{ asset('public/realplaces/js/jquery-1.12.3.min.js') }}"></script>
+<script src="{{ asset('public/realplaces/js/flexslider/jquery.flexslider-min.js') }}"></script>
+<script src="{{ asset('public/realplaces/js/lightslider/js/lightslider.min.js') }}"></script>
+<script src="{{ asset('public/realplaces/js/select2/select2.min.js') }}"></script>
+<script src="{{ asset('public/realplaces/js/owl.carousel/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('public/realplaces/js/swipebox/js/jquery.swipebox.min.js') }}"></script>
+<script src="{{ asset('public/realplaces/js/jquery.hoverIntent.js') }}"></script>
+<script src="{{ asset('public/realplaces/js/jquery.validate.min.js') }}"></script>
+<script src="{{ asset('public/realplaces/js/jquery.form.js') }}"></script>
+<script src="{{ asset('public/realplaces/js/transition.js') }}"></script>
+<script src="{{ asset('public/realplaces/js/jquery.appear.js') }}"></script>
+<script src="{{ asset('public/realplaces/js/modal.js') }}"></script>
+<script src="{{ asset('public/realplaces/js/meanmenu/jquery.meanmenu.min.js') }}"></script>
+<script src="{{ asset('public/realplaces/js/jquery.placeholder.min.js') }}"></script>
+<script src="{{ asset('public/realplaces/js/custom.js') }}"></script>
 <script>
-    (function ($) {
-        "use strict";
-
-        if (jQuery().validate) {
-
-            //Login
-            $('#login-form').validate();
-
-            //Register
-            $('#register-form').validate();
-
-            //Forgot Password
-            $('#forgot-form').validate();
-        }
-
-        /*-----------------------------------------------------------------------------------*/
-        /* Modal dialog for Login and Register
-         /*-----------------------------------------------------------------------------------*/
-        var loginModal = $('#login-modal'),
-            modalSections = loginModal.find('.modal-section');
-
-        $('.activate-section').on('click', function (event) {
-            var targetSection = $(this).data('section');
-            modalSections.slideUp();
-            loginModal.find('.' + targetSection).slideDown();
-            event.preventDefault();
-        });
-
-    })(jQuery);
+    // (function ($) {
+    //     "use strict";
+    //
+    //     // if (jQuery().validate) {
+    //     //
+    //     //     //Login
+    //     //     $('#login-form').validate();
+    //     //
+    //     //     //Register
+    //     //     $('#register-form').validate();
+    //     //
+    //     //     //Forgot Password
+    //     //     $('#forgot-form').validate();
+    //     // }
+    //     //
+    //     // /*-----------------------------------------------------------------------------------*/
+    //     // /* Modal dialog for Login and Register
+    //     //  /*-----------------------------------------------------------------------------------*/
+    //     // var loginModal = $('#login-modal'),
+    //     //     modalSections = loginModal.find('.modal-section');
+    //     //
+    //     // $('.activate-section').on('click', function (event) {
+    //     //     var targetSection = $(this).data('section');
+    //     //     modalSections.slideUp();
+    //     //     loginModal.find('.' + targetSection).slideDown();
+    //     //     event.preventDefault();
+    //     // });
+    //
+    // })(jQuery);
 </script>
 </body>
 </html>
