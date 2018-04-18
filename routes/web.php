@@ -15,6 +15,9 @@ Route::get('/', 'PageController@index')->name('page.index');
 Route::get('/properties/{city?}', 'PageController@properties')->name('page.properties');
 Route::get('/properties/details/{property_id}', 'PageController@propertyDetails')->name('page.property.details');
 
+Route::get('/agents', 'PageController@agents')->name('page.agents');
+Route::get('/agents/profile/{agent_id}', "PageController@agentProfile")->name('page.agent.profile');
+
 Auth::routes();
 
 Route::get('/home', function() {

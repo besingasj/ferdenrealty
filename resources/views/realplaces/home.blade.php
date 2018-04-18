@@ -10,20 +10,20 @@
                         <div class="slide-inner-container">
                             <div class="slide-header">
                                 <h3 class="slide-entry-title entry-title">
-                                    <a href="property-single.html" rel="bookmark">{{ $slider->property_name }}</a>
+                                    <a href="#" rel="bookmark">{{ $slider->property_name }}</a>
                                 </h3>
                                 <div class="price-and-status">
-                                    <span class="price">₱{{ $slider->price }}</span>
+                                    <span class="price">₱{{ $slider->priceFormatted() }}</span>
                                     <a href="#">
                                         <span class="property-status-tag">For Sale</span>
                                     </a>
                                 </div>
                             </div>
                             {{--<p class="hidden-sm">Enchanting three bedroom, three bath home with spacious one bedroom, one bath cabana, in-laws quarters.…</p>--}}
-                            <a class="btn-default hidden-sm hidden-md" href="#">More Details<i class="fa fa-angle-right"></i></a>
+                            <a class="btn-default hidden-sm hidden-md" href="{{ route('page.property.details', ['property_id' => $slider->property_id]) }}">More Details<i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
-                    <a href="property-single.html">
+                    <a href="#">
                         <img src="{{ asset('public/storage/' . $slider->featured_image) }}" alt="{{ $slider->property_name }}">
                     </a>
                 </li>
@@ -199,15 +199,15 @@
                                 <div class="col-xs-6 custom-col-xs-12 col-sm-6 col-md-4">
                                     <article class="hentry property-listing-three-post image-transition">
                                         <div class="property-thumbnail">
-                                            <a href="#"><img class="img-responsive" src="{{ asset('public/storage/P_' . $property->id . '-thumb.jpg') }}" alt="Thumbnail"></a>
-                                            <a href="#"><span class="property-status">For Sale</span></a>
+                                            <a href="{{ route('page.property.details', ['property_id' => $property->property_id]) }}"><img class="img-responsive" src="{{ asset('public/storage/P_' . $property->id . '-thumb.jpg') }}" alt="Thumbnail"></a>
+                                            <a href="{{ route('page.property.details', ['property_id' => $property->property_id]) }}"><span class="property-status">For Sale</span></a>
                                         </div>
                                         <!-- .property-thumbnail -->
                                         <div class="property-description">
                                             <header class="entry-header">
-                                                <h4 class="entry-title"><a href="#" rel="bookmark">{{ $property->property_name }}</a></h4>
+                                                <h4 class="entry-title"><a href="{{ route('page.property.details', ['property_id' => $property->property_id]) }}" rel="bookmark">{{ $property->property_name }}</a></h4>
                                                 <div class="price-and-status">
-                                                    <span class="price">₱{{ $property->price }}</span>
+                                                    <span class="price">₱{{ $property->priceFormatted() }}</span>
                                                 </div>
                                             </header>
                                             {{--<p>Enchanting three bedroom, three bath home with spacious one bedroom, one bath</p>--}}
@@ -258,15 +258,15 @@
                                 <div class="col-xs-6 custom-col-xs-12">
                                     <article class="hentry featured-property-post clearfix">
                                         <div class="property-thumbnail">
-                                            <a href="#"><img class="img-responsive" src="{{ asset('public/storage/P_' . $property->id . '-thumb.jpg') }}" alt="Thumbnail"></a>
-                                            <a href="#"><span class="property-status">For Sale</span></a>
+                                            <a href="{{ route('page.property.details', ['property_id' => $property->property_id]) }}"><img class="img-responsive" src="{{ asset('public/storage/P_' . $property->id . '-thumb.jpg') }}" alt="Thumbnail"></a>
+                                            <a href="{{ route('page.property.details', ['property_id' => $property->property_id]) }}"><span class="property-status">For Sale</span></a>
                                         </div>
                                         <!-- .property-thumbnail -->
                                         <div class="property-description">
                                             <header class="entry-header">
-                                                <h4 class="entry-title"><a href="#" rel="bookmark">{{ $property->property_name }}</a></h4>
+                                                <h4 class="entry-title"><a href="{{ route('page.property.details', ['property_id' => $property->property_id]) }}" rel="bookmark">{{ $property->property_name }}</a></h4>
                                                 <div class="price-and-status">
-                                                    <span class="price">₱{{ $property->price }}</span>
+                                                    <span class="price">₱{{ $property->priceFormatted() }}</span>
                                                 </div>
                                             </header>
                                             <p>Enchanting three bedroom, three bath home with spacious one…</p>
@@ -422,6 +422,87 @@
                     <!-- .container -->
                 </div>
                 <!-- .featured-properties-three -->
+                <!-- .submit-property-section -->
+                <section class="home-recent-posts home-recent-posts-two">
+                    <div class="container">
+                        <header class="section-header">
+                            <h3 class="section-title">Our Agents</h3>
+                            {{--<div class="recent-posts-carousel-nav carousel-nav">--}}
+                                {{--<a class="carousel-prev-item prev">--}}
+                                    {{--<svg xmlns="http://www.w3.org/2000/svg" class="arrow-container" width="32" height="52" viewBox="0 0 32 52">--}}
+                                        {{--<g class="left-arrow" fill="#fff">--}}
+                                            {{--<path opacity=".5" d="M31.611 7.646l-6.787-7.057-24.435 25.406 6.787 7.057z"/>--}}
+                                            {{--<path d="M.389 26.006l6.787-7.058 24.435 25.406-6.787 7.057z"/>--}}
+                                        {{--</g>--}}
+                                    {{--</svg>--}}
+                                {{--</a>--}}
+                                {{--<a class="carousel-next-item next">--}}
+                                    {{--<svg xmlns="http://www.w3.org/2000/svg" class="arrow-container" width="32" height="52" viewBox="0 0 32 52">--}}
+                                        {{--<g class="right-arrow" fill-rule="evenodd" clip-rule="evenodd" fill="#fff">--}}
+                                            {{--<path d="M.388 44.354l6.788 7.057 24.436-25.406-6.788-7.057-24.436 25.406z"/>--}}
+                                            {{--<path opacity=".5" d="M31.612 25.994l-6.788 7.058-24.436-25.406 6.788-7.057 24.436 25.405z"/>--}}
+                                        {{--</g>--}}
+                                    {{--</svg>--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
+                        </header>
+                        <div class="recent-posts-carousel">
+                            <div class="owl-carousel">
+                                @foreach ($agents as $agent)
+                                <div class="recent-posts-item">
+                                    <article class="clearfix format-image hentry">
+                                        <div class="post-thumbnail-container">
+                                            <figure class="post-thumbnail">
+                                                <a href="{{ route('page.agent.profile', ['agent_id' => $agent->id]) }}"><img src="{{ asset('public/' . $agent->profile_photo) }}" class="img-responsive wp-post-image" alt="{{ $agent->name }}"></a>
+                                            </figure>
+                                        </div>
+                                        <!-- .post-thumbnail-container -->
+                                        <div class="post-content-wrapper">
+                                            <div class="post-header entry-header">
+                                                <h4 class="post-title entry-title"><a href="{{ route('page.agent.profile', ['agent_id' => $agent->id]) }}">{{ $agent->name }}</a></h4>
+                                                <div class="post-meta entry-meta">
+                                                    <span class="author-link">Sales Manager</span>
+                                                </div>
+                                            </div>
+                                            @if (!is_null($agent->mobile_number))
+                                            <div>Mobile #: {{ $agent->mobile_number }}</div>
+                                            @endif
+                                            <div>Email: <strong>{{ $agent->email }}</strong></div>
+                                            <div>Taytay Rizal, Philippines</div>
+                                            <a class="read-more" href="{{ route('page.agent.profile', ['agent_id' => $agent->id]) }}">More <i class="fa fa-arrow-circle-o-right"></i></a>
+                                        </div>
+                                        <!-- .post-content-wrapper -->
+                                    </article>
+                                </div>
+                                @endforeach
+                                {{--<div class="recent-posts-item">--}}
+                                    {{--<article class="clearfix format-image hentry">--}}
+                                        {{--<div class="post-thumbnail-container">--}}
+                                            {{--<figure class="post-thumbnail">--}}
+                                                {{--<a href="#"><img src="{{ asset('public/paper/img/faces/face-3.jpg') }}" class="img-responsive wp-post-image" alt="News Post"></a>--}}
+                                            {{--</figure>--}}
+                                        {{--</div>--}}
+                                        {{--<!-- .post-thumbnail-container -->--}}
+                                        {{--<div class="post-content-wrapper">--}}
+                                            {{--<div class="post-header entry-header">--}}
+                                                {{--<h4 class="post-title entry-title"><a href="#">Agent One</a></h4>--}}
+                                                {{--<div class="post-meta entry-meta">--}}
+                                                    {{--<span class="author-link">Sales Manager</span>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                            {{--<div>Mobile #: 123-456-7890</div>--}}
+                                            {{--<div>Email: email@address.com</div>--}}
+                                            {{--<div>Ferden Realty Corp</div>--}}
+                                            {{--<a class="read-more" href="#">More <i class="fa fa-arrow-circle-o-right"></i></a>--}}
+                                        {{--</div>--}}
+                                        {{--<!-- .post-content-wrapper -->--}}
+                                    {{--</article>--}}
+                                {{--</div>--}}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- .container -->
+                </section>
             </main>
             <!-- .site-main -->
         </div>
