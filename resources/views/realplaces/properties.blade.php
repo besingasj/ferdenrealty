@@ -5,7 +5,7 @@
     <div class="page-head " style="background: #494c53 no-repeat center top;  background-size: cover;">
         <div class="container">
             <div class="page-head-content">
-                <h1 class="page-title"><span>List Layout Full Width</span></h1>
+                <h1 class="page-title"><span>Properties</span></h1>
             </div>
         </div>
     </div>
