@@ -33,6 +33,8 @@ Route::group(['middleware' => ["auth"], 'prefix' => 'dashboard'], function() {
 //     Route::get('agents/create', "")
 //     Route::resource('agents', 'AgentController');
 
+     Route::post('amenities/{property_id}', 'AmenityController@attachDetach')->name('properties.amenities');
+
      Route::post("additional_details/{property_id}", "AdditionalDetailController@saveNew")->name("additional_details.new");
 
      Route::post("upload/featured/{property_id}", "ImageController@featured")->name("image.featured");

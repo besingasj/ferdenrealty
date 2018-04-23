@@ -44,7 +44,7 @@
 
         <div class="sidebar-wrapper">
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
+                <a href="{{ URL::to('/') }}" class="simple-text">
                     {{ env('APP_NAME') }}
                 </a>
             </div>

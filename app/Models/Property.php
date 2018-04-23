@@ -49,4 +49,9 @@ class Property extends Model
     {
         return number_format($this->price);
     }
+
+    public function amenities()
+    {
+        return $this->belongsToMany(Amenity::class, 'amenity_property');
+    }
 }

@@ -192,6 +192,35 @@
                     </form>
                 </div>
             </div>
+
+            <div class="card">
+                <div class="header">
+                    <h1 class="title">Amenities</h1>
+                    <p class="text-muted">Property Features</p>
+                </div>
+                <div class="content">
+                    <form action="{{ route('properties.amenities', [ 'property_id' => $property->id]) }}" method="post">
+                        @csrf
+                        <div class="row">
+                            @foreach($amenities as $feature)
+                                @php
+                                $checked = $property->amenities()->where('name', $feature->name)->first();
+                                @endphp
+                                <div class="col-md-3">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="amenities[{{ $feature->name }}]" {{ !is_null($checked) ? "checked" : "" }}> {{ $feature->name }}
+                                        </label>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                        <button type="submit" class="btn btn-info btn-fill btn-wd">Save Amenities</button>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+
             <div class="card">
                 <div class="header">
                     <h1 class="title">Additional Details</h1>

@@ -157,27 +157,26 @@
 
                     <div class="row">
 
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label>Toilet and bathrooms</label>
                                 <input type="text" name="tnb" class="form-control border-input" placeholder="toilet and bathrooms" value="{{ old('tnb') }}">
                             </div>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label>Car Garage</label>
                                 <input type="text" name="car_garage" class="form-control border-input" placeholder="car garage" value="{{ old('car_garage') }}">
                             </div>
                         </div>
 
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label>Amenities</label>
-                                <input type="text" name="amenities" class="form-control border-input" placeholder="amenities" value="{{ old('amenities') }}">
-                            </div>
-                        </div>
-
+                        {{--<div class="col-md-4">--}}
+                            {{--<div class="form-group">--}}
+                                {{--<label>Amenity</label>--}}
+                                {{--<input type="text" name="amenities" class="form-control border-input" placeholder="amenities" value="{{ old('amenities') }}">--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                     </div>
                     <button type="submit" class="btn btn-info btn-fill btn-wd">Save Property</button>
                     <div class="clearfix"></div>

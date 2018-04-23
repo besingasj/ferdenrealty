@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PropertyRequest;
+use App\Models\Amenity;
 use App\Models\Property;
 use Illuminate\Http\Request;
 
@@ -96,7 +97,7 @@ class PropertyController extends Controller
      */
     public function show($id)
     {
-        $property = Property::findOrFail($id);
+        $property = Property::find($id);
 
         $cities = [
             'taytay',
@@ -108,9 +109,12 @@ class PropertyController extends Controller
             'quezon'
         ];
 
+        $amenities = Amenity::all();
+
         return view('properties.show', [
             'property' => $property,
-            'cities' => $cities
+            'cities' => $cities,
+            'amenities' => $amenities
         ]);
     }
 

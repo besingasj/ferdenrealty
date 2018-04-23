@@ -24,7 +24,7 @@ class ImageController extends Controller
 
         if ($image->width() !== 2000 || $image->height() !== 1000) {
             return back()->withErrors([
-                'featured_image' => 'Featured image must have 1200x600 dimension.'
+                'featured_image' => 'Featured image must have 1200x1000 dimension.'
             ]);
         }
 

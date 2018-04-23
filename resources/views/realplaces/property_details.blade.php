@@ -165,17 +165,22 @@
                                         </ul>
                                     </div>
                                     @endif
-                                    {{--<div class="property-features">--}}
-                                        {{--<h4 class="fancy-title">Features</h4>--}}
-                                        {{--<ul class="property-features-list clearfix">--}}
+                                    @if ($property->amenities()->count() > 0)
+                                    <div class="property-features">
+                                        <h4 class="fancy-title">Amenities</h4>
+                                        <ul class="property-features-list clearfix">
+                                            @foreach($property->amenities()->get() as $amenity)
+                                                <li><a href="#">{{ $amenity->name }}</a></li>
                                             {{--<li><a href="#">2 Stories</a></li>--}}
                                             {{--<li><a href="#">Bike Path</a></li>--}}
                                             {{--<li><a href="#">Central Cooling</a></li>--}}
                                             {{--<li><a href="#">Jog Path</a></li>--}}
                                             {{--<li><a href="#">Lawn</a></li>--}}
                                             {{--<li><a href="#">Swimming Pool</a></li>--}}
-                                        {{--</ul>--}}
-                                    {{--</div>--}}
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                    @endif
                                     {{--<section class="property-video">--}}
                                         {{--<h4 class="fancy-title">Virtual Tour</h4>--}}
                                         {{--<div class="placeholder-thumb format-video">--}}
