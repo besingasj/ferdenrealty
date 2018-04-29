@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ env('APP_NAME', "Ferden Realty Corporation") }}</title>
-    <link rel="icon" href="{{ asset('public/realplaces/images/cropped-ms-icon-310x310-32x32.png') }}" sizes="32x32" />
-    <link rel="icon" href="{{ asset('public/realplaces/images/cropped-ms-icon-310x310-192x192.png') }}" sizes="192x192" />
-    <link rel="apple-touch-icon-precomposed" href="{{ asset('public/realplaces/images/cropped-ms-icon-310x310-180x180.png') }}">
+    <link rel="icon" href="{{ asset('public/realplaces/images/ferden-cropped-ms-icon-310x310-32x32.png') }}" sizes="32x32" />
+    <link rel="icon" href="{{ asset('public/realplaces/images/ferden-cropped-ms-icon-310x310-192x192.png') }}" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="{{ asset('public/realplaces/images/ferden-cropped-ms-icon-310x310-180x180.png') }}">
     <!-- Google font-->
     <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic,900' rel='stylesheet' type='text/css'>
@@ -36,18 +36,18 @@
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <!-- Your customer chat code -->
 <div class="fb-customerchat"
-     attribution="setup_tool"
-     page_id="186086025080115"
-     theme_color="#20cef5">
+  attribution="setup_tool"
+  page_id="186086025080115"
+  theme_color="#cc0033">
 </div>
 <div class="page-loader">
     <img class="page-loader-img" src="{{ asset('public/realplaces/images/page-loader-img.gif') }}" alt="Page Loader"/>
@@ -98,8 +98,8 @@
             <div class="col-lg-3 zero-horizontal-padding">
                 <div id="site-logo" class="site-logo">
                     <div class="logo-inner-wrapper">
-                        <a href="{{ route('page.index') }}"><img src="{{ asset('public/realplaces/images/fr-logo.png') }}" alt="Logo"/></a>
-                        <small class="tag-line">Ferden Realty Corporation</small>
+                        <a href="{{ route('page.index') }}"><img src="{{ asset('public/realplaces/images/ferden-logo.png') }}" alt="Logo"/></a>
+                        <small class="tag-line">Where Dreams Come Home</small>
                     </div>
                 </div>
             </div>
@@ -172,10 +172,10 @@
         <div class="row">
             <div class="col-lg-3 footer-logo">
                 <a href="#">
-                    <img class="img-responsive" src="{{ asset('public/realplaces/images/fr-footer-logo.png') }}" alt="Footer Logo"/>
+                    <img class="img-responsive" src="{{ asset('public/realplaces/images/ferden-logo.png') }}" alt="Footer Logo"/>
                 </a>
                 <p class="copyright-text">
-                    Ferden Realty Corporation
+                © Copyright 2018 All right reserved 
                 </p>
             </div>
             <div class="col-lg-9 footer-widget-area">

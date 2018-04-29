@@ -61,7 +61,7 @@
                                                 </i>
                                                 <div class="meta-inner-wrapper">
                                                     <span class="meta-item-label">Lot Area</span>
-                                                    <span class="meta-item-value">{{ $property->lot_area }}<sub class="meta-item-unit">Sq Ft</sub></span>
+                                                    <span class="meta-item-value">{{ $property->lot_area }}<sub class="meta-item-unit">Sq M</sub></span>
                                                 </div>
                                             </div>
                                         @endif
@@ -74,7 +74,7 @@
                                                 </i>
                                                 <div class="meta-inner-wrapper">
                                                     <span class="meta-item-label">Floor Area</span>
-                                                    <span class="meta-item-value">{{ $property->floor_area }}<sub class="meta-item-unit">Sq Ft</sub></span>
+                                                    <span class="meta-item-value">{{ $property->floor_area }}<sub class="meta-item-unit">Sq M</sub></span>
                                                 </div>
                                             </div>
                                         @endif
@@ -428,7 +428,7 @@
                                                             </i>
                                                             <div class="meta-inner-wrapper">
                                                                 <span class="meta-item-label">Lot Area</span>
-                                                                <span class="meta-item-value">{{ $property->lot_area }}<sub class="meta-item-unit">Sq Ft</sub></span>
+                                                                <span class="meta-item-value">{{ $property->lot_area }}<sub class="meta-item-unit">Sq M</sub></span>
                                                             </div>
                                                         </div>
                                                         @endif
@@ -441,7 +441,7 @@
                                                                     </i>
                                                                     <div class="meta-inner-wrapper">
                                                                         <span class="meta-item-label">Floor Area</span>
-                                                                        <span class="meta-item-value">{{ $property->floor_area }}<sub class="meta-item-unit">Sq Ft</sub></span>
+                                                                        <span class="meta-item-value">{{ $property->floor_area }}<sub class="meta-item-unit">Sq M</sub></span>
                                                                     </div>
                                                                 </div>
                                                             @endif
@@ -525,7 +525,7 @@
                                                         {{--</i>--}}
                                                         {{--<div class="meta-inner-wrapper">--}}
                                                             {{--<span class="meta-item-label">Area</span>--}}
-                                                            {{--<span class="meta-item-value">52000<sub class="meta-item-unit">Sq Ft</sub></span>--}}
+                                                            {{--<span class="meta-item-value">52000<sub class="meta-item-unit">Sq M</sub></span>--}}
                                                         {{--</div>--}}
                                                     {{--</div>--}}
                                                     {{--<div class="meta-item meta-property-type">--}}
@@ -566,7 +566,7 @@
                                                         {{--</i>--}}
                                                         {{--<div class="meta-inner-wrapper">--}}
                                                             {{--<span class="meta-item-label">Area</span>--}}
-                                                            {{--<span class="meta-item-value">4300<sub class="meta-item-unit">Sq Ft</sub></span>--}}
+                                                            {{--<span class="meta-item-value">4300<sub class="meta-item-unit">Sq M</sub></span>--}}
                                                         {{--</div>--}}
                                                     {{--</div>--}}
                                                     {{--<div class="meta-item">--}}

@@ -167,7 +167,7 @@
                                                     </i>
                                                     <div class="meta-inner-wrapper">
                                                         <span class="meta-item-label">Lot Area</span>
-                                                        <span class="meta-item-value">{{ $property->floor_area }}<sub class="meta-item-unit">Sq Ft</sub></span>
+                                                        <span class="meta-item-value">{{ $property->floor_area }}<sub class="meta-item-unit">Sq M</sub></span>
                                                     </div>
                                                 </div>
                                             @endif
@@ -180,7 +180,7 @@
                                                     </i>
                                                     <div class="meta-inner-wrapper">
                                                         <span class="meta-item-label">Lot Area</span>
-                                                        <span class="meta-item-value">{{ $property->lot_area }}<sub class="meta-item-unit">Sq Ft</sub></span>
+                                                        <span class="meta-item-value">{{ $property->lot_area }}<sub class="meta-item-unit">Sq M</sub></span>
                                                     </div>
                                                 </div>
                                             @endif
@@ -306,7 +306,7 @@
                                             {{--</i>--}}
                                             {{--<div class="meta-inner-wrapper">--}}
                                                 {{--<span class="meta-item-label">Area</span>--}}
-                                                {{--<span class="meta-item-value">4300<sub class="meta-item-unit">Sq Ft</sub></span>--}}
+                                                {{--<span class="meta-item-value">4300<sub class="meta-item-unit">Sq M</sub></span>--}}
                                             {{--</div>--}}
                                         {{--</div>--}}
                                         {{--<div class="meta-item">--}}
@@ -405,7 +405,7 @@
                                             {{--</i>--}}
                                             {{--<div class="meta-inner-wrapper">--}}
                                                 {{--<span class="meta-item-label">Area</span>--}}
-                                                {{--<span class="meta-item-value">3500<sub class="meta-item-unit">Sq Ft</sub></span>--}}
+                                                {{--<span class="meta-item-value">3500<sub class="meta-item-unit">Sq M</sub></span>--}}
                                             {{--</div>--}}
                                         {{--</div>--}}
                                         {{--<div class="meta-item">--}}
@@ -504,7 +504,7 @@
                                             {{--</i>--}}
                                             {{--<div class="meta-inner-wrapper">--}}
                                                 {{--<span class="meta-item-label">Area</span>--}}
-                                                {{--<span class="meta-item-value">950<sub class="meta-item-unit">Sq Ft</sub></span>--}}
+                                                {{--<span class="meta-item-value">950<sub class="meta-item-unit">Sq M</sub></span>--}}
                                             {{--</div>--}}
                                         {{--</div>--}}
                                         {{--<div class="meta-item">--}}
@@ -571,7 +571,7 @@
                                             {{--</i>--}}
                                             {{--<div class="meta-inner-wrapper">--}}
                                                 {{--<span class="meta-item-label">Area</span>--}}
-                                                {{--<span class="meta-item-value">4530<sub class="meta-item-unit">Sq Ft</sub></span>--}}
+                                                {{--<span class="meta-item-value">4530<sub class="meta-item-unit">Sq M</sub></span>--}}
                                             {{--</div>--}}
                                         {{--</div>--}}
                                         {{--<div class="meta-item">--}}
@@ -670,7 +670,7 @@
                                             {{--</i>--}}
                                             {{--<div class="meta-inner-wrapper">--}}
                                                 {{--<span class="meta-item-label">Area</span>--}}
-                                                {{--<span class="meta-item-value">9450<sub class="meta-item-unit">Sq Ft</sub></span>--}}
+                                                {{--<span class="meta-item-value">9450<sub class="meta-item-unit">Sq M</sub></span>--}}
                                             {{--</div>--}}
                                         {{--</div>--}}
                                         {{--<div class="meta-item">--}}
@@ -770,7 +770,7 @@
                                             {{--</i>--}}
                                             {{--<div class="meta-inner-wrapper">--}}
                                                 {{--<span class="meta-item-label">Area</span>--}}
-                                                {{--<span class="meta-item-value">2800<sub class="meta-item-unit">Sq Ft</sub></span>--}}
+                                                {{--<span class="meta-item-value">2800<sub class="meta-item-unit">Sq M</sub></span>--}}
                                             {{--</div>--}}
                                         {{--</div>--}}
                                         {{--<div class="meta-item">--}}

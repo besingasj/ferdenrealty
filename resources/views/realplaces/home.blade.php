@@ -150,10 +150,10 @@
                                 </select>
                             </div>
                             <div class="option-bar property-min-area">
-                                <input type="text" name="min-area" id="min-area" pattern="[0-9]+" value="" placeholder="Min Area (sq ft)" title="Please only provide digits!">
+                                <input type="text" name="min-area" id="min-area" pattern="[0-9]+" value="" placeholder="Min Area (Sq M)" title="Please only provide digits!">
                             </div>
                             <div class="option-bar property-max-area">
-                                <input type="text" name="max-area" id="max-area" pattern="[0-9]+" value="" placeholder="Max Area (sq ft)" title="Please only provide digits!">
+                                <input type="text" name="max-area" id="max-area" pattern="[0-9]+" value="" placeholder="Max Area (Sq M)" title="Please only provide digits!">
                             </div>
                             <div class="option-bar form-control-buttons">
                                 <input type="submit" value="Search" class="form-submit-btn">
@@ -215,7 +215,7 @@
                                                 @if (!is_null($property->lot_area))
                                                 <div class="meta-wrapper">
                                                     <span class="meta-value">{{ $property->lot_area }}</span>
-                                                    <sub class="meta-unit">Sq Ft</sub>
+                                                    <sub class="meta-unit">Sq M</sub>
                                                 </div>
                                                 @endif
                                                 @if (!is_null($property->bedrooms))
@@ -274,7 +274,7 @@
                                                 @if (!is_null($property->lot_area))
                                                     <div class="meta-wrapper">
                                                         <span class="meta-value">{{ $property->lot_area }}</span>
-                                                        <sub class="meta-unit">Sq Ft</sub>
+                                                        <sub class="meta-unit">Sq M</sub>
                                                     </div>
                                                 @endif
                                                 @if (!is_null($property->bedrooms))
@@ -320,7 +320,7 @@
                                         {{--<div class="property-meta entry-meta clearfix">--}}
                                             {{--<div class="meta-wrapper">--}}
                                                 {{--<span class="meta-value">3500</span>--}}
-                                                {{--<sub class="meta-unit">Sq Ft</sub>--}}
+                                                {{--<sub class="meta-unit">Sq M</sub>--}}
                                             {{--</div>--}}
                                             {{--<div class="meta-wrapper">--}}
                                                 {{--<span class="meta-value">3</span>--}}
@@ -358,7 +358,7 @@
                                         {{--<div class="property-meta entry-meta clearfix">--}}
                                             {{--<div class="meta-wrapper">--}}
                                                 {{--<span class="meta-value">9350</span>--}}
-                                                {{--<sub class="meta-unit">Sq Ft</sub>--}}
+                                                {{--<sub class="meta-unit">Sq M</sub>--}}
                                             {{--</div>--}}
                                             {{--<div class="meta-wrapper">--}}
                                                 {{--<span class="meta-value">4</span>--}}
@@ -396,7 +396,7 @@
                                         {{--<div class="property-meta entry-meta clearfix">--}}
                                             {{--<div class="meta-wrapper">--}}
                                                 {{--<span class="meta-value">3800</span>--}}
-                                                {{--<sub class="meta-unit">Sq Ft</sub>--}}
+                                                {{--<sub class="meta-unit">Sq M</sub>--}}
                                             {{--</div>--}}
                                             {{--<div class="meta-wrapper">--}}
                                                 {{--<span class="meta-value">4</span>--}}
