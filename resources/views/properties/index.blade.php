@@ -3,6 +3,12 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
+            <form action="{{ route('properties.search') }}">
+                <div class="input-group">
+                    <input type="text" name="query" class="form-control" placeholder="Search Property">
+                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                </div>
+            </form>
             <div class="card">
                 <div class="header">
 

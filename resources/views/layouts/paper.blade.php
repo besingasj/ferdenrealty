@@ -80,7 +80,7 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li>
+                        {{-- <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="ti-panel"></i>
                                 <p>Stats</p>
@@ -100,19 +100,22 @@
                                 <li><a href="#">Notification 4</a></li>
                                 <li><a href="#">Another notification</a></li>
                             </ul>
-                        </li>
+                        </li> --}}
                         <li>
-                            <a href="#">
-                                <i class="ti-settings"></i>
-                                <p>Settings</p>
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="ti-arrow-circle-right"></i>
+                                <p>Logout</p>
                             </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </li>
                     </ul>
 
                 </div>
             </div>
         </nav>
-
 
         <div class="content">
             <div class="container-fluid">
@@ -124,7 +127,7 @@
         <footer class="footer">
             <div class="container-fluid">
                 <nav class="pull-left">
-                    <ul>
+                    {{-- <ul style="display: none">
 
                         <li>
                             <a href="http://www.creative-tim.com">
@@ -141,10 +144,10 @@
                                 Licenses
                             </a>
                         </li>
-                    </ul>
+                    </ul> --}}
                 </nav>
                 <div class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>
+                    &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://bmkscripts.com">bmkscripts</a>
                 </div>
             </div>
         </footer>

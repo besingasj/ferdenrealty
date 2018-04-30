@@ -20,16 +20,6 @@ Route::get('/agents/profile/{agent_id}', "PageController@agentProfile")->name('p
 
 Route::post('/property/search', 'PropertyController@advanceSearch')->name('page.property.advance_search');
 
-Route::get('testGmail', function() {
-    $data = array('name'=>"Sam Jose", "body" => "Test mail");
-
-    Mail::send('emails.mail', $data, function($message) {
-        $message->to('besingamkb@gmail.com', 'Artisans Web')
-            ->subject('Artisans Web Testing Mail');
-        $message->from('besingamk1@gmail.com','Sajid Sayyad');
-    });
-});
-
 Route::post('contact-agents/submit', 'AgentController@contactAgentSubmit')->name('contact.agents');
 
 Auth::routes();
@@ -40,18 +30,27 @@ Route::get('/home', function() {
 
 
 Route::group(['middleware' => ["auth"], 'prefix' => 'dashboard'], function() {
-     Route::resource("properties", "PropertyController");
-     Route::get('property/{property_id}/toggleFeatured', "PropertyController@toggleFeatured")->name('properties.toggleFeatured');
+    Route::get('/', function() {
+        return redirect()->route('properties.index');
+    });
 
-//     Route::get('agents', "HomeController@agents")->name('agents.index');
-//     Route::get('agents/create', "")
-//     Route::resource('agents', 'AgentController');
+    Route::get("properties/search", "PropertyController@searchProperty")->name('properties.search');
+    Route::resource("properties", "PropertyController");
+    Route::get('property/{property_id}/toggleFeatured', "PropertyController@toggleFeatured")->name('properties.toggleFeatured');
 
-     Route::post('amenities/{property_id}', 'AmenityController@attachDetach')->name('properties.amenities');
+    //     Route::get('agents', "HomeController@agents")->name('agents.index');
+    //     Route::get('agents/create', "")
+    //     Route::resource('agents', 'AgentController');
 
-     Route::post("additional_details/{property_id}", "AdditionalDetailController@saveNew")->name("additional_details.new");
+    Route::post('amenities/{property_id}', 'AmenityController@attachDetach')->name('properties.amenities');
 
-     Route::post("upload/featured/{property_id}", "ImageController@featured")->name("image.featured");
-     Route::post("upload/gallery/{property_id}", "ImageController@gallery")->name("image.gallery");
-     Route::get('image/{image_id}/delete', "ImageController@delete")->name('images.delete');
+    Route::get('amenities', 'AmenityController@index')->name('properties.amenites.index');
+    Route::post('amenities', 'AmenityController@store')->name('properties.amenites.new');
+    Route::get('amenities/{id}', 'AmenityController@delete')->name('properties.amenities.delete');
+
+    Route::post("additional_details/{property_id}", "AdditionalDetailController@saveNew")->name("additional_details.new");
+
+    Route::post("upload/featured/{property_id}", "ImageController@featured")->name("image.featured");
+    Route::post("upload/gallery/{property_id}", "ImageController@gallery")->name("image.gallery");
+    Route::get('image/{image_id}/delete', "ImageController@delete")->name('images.delete');
 });

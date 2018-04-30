@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AdvancePropertySearchRequest;
 use App\Http\Requests\PropertyRequest;
 use App\Models\Amenity;
 use App\Models\Property;
 use Illuminate\Http\Request;
-use App\Http\Requests\AdvancePropertySearchReqeuest;
 
 class PropertyController extends Controller
 {
@@ -172,7 +172,12 @@ class PropertyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $property = Property::find($id);
+        $property->delete();
+
+        return redirect()->route('properties.index')->with([
+            'property_deleted' => "Property deleted."
+        ]);
     }
 
     public function toggleFeatured($property_id)
@@ -190,5 +195,15 @@ class PropertyController extends Controller
     public function advanceSearch(AdvancePropertySearchRequest $request) 
     {
         return false;
+    }
+
+    public function searchProperty(Request $request)
+    {
+//        ->where('name', 'like', 'T%')
+        $properties = Property::where('property_name', 'like', "%" . $request->get('query') . "%")
+                                ->orWhere('city', 'like', "%" . $request->get('query') . "%")->get();
+        return view('properties.index', [
+            'properties' => $properties
+        ]);
     }
 }

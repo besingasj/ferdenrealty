@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AmenityRequest;
 use App\Models\Amenity;
 use App\Models\Property;
 use Illuminate\Http\Request;
@@ -47,5 +48,37 @@ class AmenityController extends Controller
                 'amenities_error_message' => 'please select amenities'
             ]);
         }
+    }
+
+    public function index()
+    {
+//        $properties = Property::all();
+//        return view('properties.index', [
+//            'properties' => $properties
+//        ]);
+        $amenities = Amenity::orderBy('created_at', 'desc')->get();
+        return view('amenities.index', [
+            'amenities' => $amenities
+        ]);
+    }
+
+    public function store(AmenityRequest $request)
+    {
+        $amenity = new Amenity;
+        $amenity->name = $request->name;
+        $amenity->save();
+
+        return redirect()->route('properties.amenites.index')->with([
+            'new_amenity_success' => 'new amenity added.'
+        ]);
+    }
+
+    public function delete($id)
+    {
+
+        $amenity = Amenity::find($id);
+//        $amenity->delete();
+
+        return redirect()->route('properties.amenites.index');
     }
 }

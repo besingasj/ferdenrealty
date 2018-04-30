@@ -188,6 +188,12 @@
 
                         </div>
                         <button type="submit" class="btn btn-info btn-fill btn-wd">Save Property</button>
+                        {{-- <a href="" class="btn btn-danger btn-fill btn-wd">Delete Property</a> --}}
+                        <form action="{{ route('properties.destroy', ['property' => $property->id]) }}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <button type="delete" id="deleteProperty" class="btn btn-danger btn-fill btn-wd">Delete Property</button>
+                        </form>
                         <div class="clearfix"></div>
                     </form>
                 </div>
@@ -289,10 +295,11 @@
 @push("properties_scripts")
     <script  type="text/javascript">
         $(document).ready(function(e) {
+
             var addNewAdditionalFieldsBtn = $("#addNewAdditionalFields");
             var additionalFieldsContainer = $("#additionalDetailsContainer");
-
             var fieldIteration = "{{ $property->additionalDetails->count() + 1 }}";
+            var propertyDeletedBtn = $("#deleteProperty");
 
             var htmlForm ='<div class="row">\n' +
                 '                            <div class="form-group">\n' +
@@ -310,6 +317,18 @@
                 fieldIteration++;
 
                 e.preventDefault();
+                return false;
+            });
+
+            propertyDeletedBtn.click(function(event) {
+                var confirmDelete = confirm("Are you sure you want to delete this property?");
+                console.log(confirmDelete)
+
+                if (confirmDelete) {
+                    return true;
+                }
+                
+                event.preventDefault();
                 return false;
             });
         });
