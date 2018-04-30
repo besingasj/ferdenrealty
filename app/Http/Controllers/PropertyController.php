@@ -6,6 +6,7 @@ use App\Http\Requests\PropertyRequest;
 use App\Models\Amenity;
 use App\Models\Property;
 use Illuminate\Http\Request;
+use App\Http\Requests\AdvancePropertySearchReqeuest;
 
 class PropertyController extends Controller
 {
@@ -184,5 +185,10 @@ class PropertyController extends Controller
         return redirect()->route('properties.index')->with([
             'toogleFeatured_success_message' => $property->featured ? "Featured Property" : "Unfeatured Property"
         ]);
+    }
+
+    public function advanceSearch(AdvancePropertySearchRequest $request) 
+    {
+        return false;
     }
 }

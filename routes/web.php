@@ -18,6 +18,20 @@ Route::get('/properties/details/{property_id}', 'PageController@propertyDetails'
 Route::get('/agents', 'PageController@agents')->name('page.agents');
 Route::get('/agents/profile/{agent_id}', "PageController@agentProfile")->name('page.agent.profile');
 
+Route::post('/property/search', 'PropertyController@advanceSearch')->name('page.property.advance_search');
+
+Route::get('testGmail', function() {
+    $data = array('name'=>"Sam Jose", "body" => "Test mail");
+
+    Mail::send('emails.mail', $data, function($message) {
+        $message->to('besingamkb@gmail.com', 'Artisans Web')
+            ->subject('Artisans Web Testing Mail');
+        $message->from('besingamk1@gmail.com','Sajid Sayyad');
+    });
+});
+
+Route::post('contact-agents/submit', 'AgentController@contactAgentSubmit')->name('contact.agents');
+
 Auth::routes();
 
 Route::get('/home', function() {

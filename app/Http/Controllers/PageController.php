@@ -46,7 +46,7 @@ class PageController extends Controller
     {
         $property = Property::where('property_id', $property_id)->first();
         $images = Image::where('property_id', $property->id)->get();
-        $additional_details = AdditionalDetails::where('property_id', $property->id)->get();
+        $additional_details = AdditionalDetails::where('property_id', $property->id)->orderBy('created_at', 'desc')->get();
 
         $similar_properties = Property::where('property_id', '!=', $property_id)->limit(5)->get();
 

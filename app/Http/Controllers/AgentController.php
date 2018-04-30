@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactAgents;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class AgentController extends Controller
 {
@@ -85,5 +88,30 @@ class AgentController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function contactAgentSubmit(Request $request)
+    {
+        $agents = User::where('level', 'agent')->get();
+
+        if (!is_null($agents)) {
+            foreach ($agents as $agent) {
+                Mail::to($agent)->send(new ContactAgents($request, $agent));
+            }
+        }
+        $data = [
+            'name' => $request->name,
+            'body' => $request->message
+        ];
+
+//        Mail::send('emails.mail', $data, function($message) use ($request) {
+//            $message->to('besingamk1@gmail.com', 'Mark Kevin Besinga')
+//                ->subject('Ferden Realty Corporation : Contact Agents');
+//            $message->from($request->email, $request->name);
+//        });
+
+        return response()->json([
+            'message' => 'Sent!'
+        ]);
     }
 }

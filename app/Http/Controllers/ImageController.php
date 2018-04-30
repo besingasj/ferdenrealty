@@ -30,9 +30,9 @@ class ImageController extends Controller
 
         $filename = "f_" . $property_id . "_" . Carbon::now()->timestamp;
 
-        $path = $request->featured_image->storeAs('featured', $filename, 'public');
+        $path = $request->featured_image->storeAs('featured', $filename . "." . $request->featured_image->extension(), 'public');
 
-        $thumbnail = "P_" . $property_id . "-thumb.jpg";
+        $thumbnail = "thumb-" . $filename . "." . $request->featured_image->extension();
         $thumb = $image->fit(660, 600);
 
         Storage::disk('public')->put($thumbnail, (string) $thumb->encode());

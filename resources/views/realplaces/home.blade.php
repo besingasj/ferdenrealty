@@ -33,23 +33,37 @@
     <div id="content-wrapper" class="site-content-wrapper">
         <div id="content" class="site-content layout-wide">
             <main id="main" class="site-main">
-                <section class="advance-search main-advance-search">
+                {{-- <section class="advance-search main-advance-search">
                     <div class="container">
                         <h3 class="search-title">Quick Search</h3>
                         <form class="advance-search-form" action="#" method="get">
                             <div class="option-bar property-location">
                                 <select name="location" id="location" class="search-select">
                                     <option value="any">Location (Any)</option>
-                                    <option value="miami">Miami</option>
+                                    <!-- <option value="miami">Miami</option>
                                     <option value="little-havana">- Little Havana</option>
                                     <option value="perrine">- Perrine</option>
-                                    <option value="doral">- Doral</option>
+                                    <option value="doral">- Doral</option> -->
+                                    @php
+                                    $cities = [
+                                        'taytay',
+                                        'cainta',
+                                        'antipolo',
+                                        'binangonan',
+                                        'teresa',
+                                        'pasig',
+                                        'quezon'
+                                    ];
+                                    @endphp
+                                    @foreach ($cities as $city)
+                                        <option value="{{ $city }}">{{ $city }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="option-bar property-type">
                                 <select name="type" id="select-property-type" class="search-select">
                                     <option value="any" selected="selected">Property Type (Any)</option>
-                                    <option value="commercial"> Commercial</option>
+                                    <!-- <option value="commercial"> Commercial</option>
                                     <option value="office">-  Office</option>
                                     <option value="shop">-  Shop</option>
                                     <option value="residential"> Residential</option>
@@ -57,16 +71,26 @@
                                     <option value="apartment-building">-  Apartment Building</option>
                                     <option value="condominium">-  Condominium</option>
                                     <option value="single-family-home">-  Single Family Home</option>
-                                    <option value="villa">-  Villa</option>
+                                    <option value="villa">-  Villa</option> -->
+                                    @php 
+                                    $types = [
+                                        'Commercial Space',
+                                        'House N Lot',
+                                        'Condo'
+                                    ];
+                                    @endphp
+                                    @foreach ($types as $type)
+                                        <option value="{{ $type }}">{{ $type }}</option>
+                                    @endforeach
                                 </select>
                             </div>
-                            <div class="option-bar property-status">
+                            <!-- <div class="option-bar property-status">
                                 <select name="status" id="select-status" class="search-select">
                                     <option value="any" selected="selected">Property Status (Any)</option>
                                     <option value="for-rent"> For Rent</option>
                                     <option value="for-sale"> For Sale</option>
                                 </select>
-                            </div>
+                            </div> -->
                             <div class="option-bar property-keyword">
                                 <input type="text" name="keyword" id="keyword-txt" value="" placeholder="Keyword">
                             </div>
@@ -186,7 +210,7 @@
                         <!-- .advance-search-form -->
                     </div>
                     <!-- .container -->
-                </section>
+                </section> --}}
                 <!-- .advance-search -->
                 <div class="property-listing-three">
                     <div class="container">

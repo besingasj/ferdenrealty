@@ -431,7 +431,21 @@
                 errorContainer.fadeOut('fast');
             },
             success: function (ajax_response, statusText, xhr, $form) {
-                var response = $.parseJSON(ajax_response);
+                console.log("ajax response")
+                console.log(ajax_response)
+
+                console.log("status text")
+                console.log(statusText)
+
+                console.log("xhr")
+                console.log(xhr)
+
+                console.log("$form")
+                console.log($form)
+
+                var response = ajax_response;
+                console.log(response);
+                console.log("i am here");
                 ajaxLoader.fadeOut('fast');
                 submitButton.removeAttr('disabled');
                 if (response.success) {
@@ -440,6 +454,11 @@
                 } else {
                     errorContainer.html(response.message).fadeIn('fast');
                 }
+            },
+            error: function (ajax_response) {
+
+                var response = ajax_response;
+                messageContainer.html(response.message).fadeIn('fast');
             }
         };
 
