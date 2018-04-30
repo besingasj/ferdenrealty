@@ -38,6 +38,7 @@ class ImageController extends Controller
         Storage::disk('public')->put($thumbnail, (string) $thumb->encode());
 
         $property->featured_image = $path;
+        $property->thumbnail = $thumbnail;
         $property->save();
 
         return redirect()->route('properties.show', [

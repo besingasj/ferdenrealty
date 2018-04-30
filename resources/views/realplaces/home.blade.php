@@ -223,7 +223,7 @@
                                 <div class="col-xs-6 custom-col-xs-12 col-sm-6 col-md-4">
                                     <article class="hentry property-listing-three-post image-transition">
                                         <div class="property-thumbnail">
-                                            <a href="{{ route('page.property.details', ['property_id' => $property->property_id]) }}"><img class="img-responsive" src="{{ asset('public/storage/P_' . $property->id . '-thumb.jpg') }}" alt="Thumbnail"></a>
+                                            <a href="{{ route('page.property.details', ['property_id' => $property->property_id]) }}"><img class="img-responsive" src="{{ asset('public/storage/' . $property->thumbnail) }}" alt="Thumbnail"></a>
                                             <a href="{{ route('page.property.details', ['property_id' => $property->property_id]) }}"><span class="property-status">For Sale</span></a>
                                         </div>
                                         <!-- .property-thumbnail -->
@@ -282,7 +282,7 @@
                                 <div class="col-xs-6 custom-col-xs-12">
                                     <article class="hentry featured-property-post clearfix">
                                         <div class="property-thumbnail">
-                                            <a href="{{ route('page.property.details', ['property_id' => $property->property_id]) }}"><img class="img-responsive" src="{{ asset('public/storage/P_' . $property->id . '-thumb.jpg') }}" alt="Thumbnail"></a>
+                                            <a href="{{ route('page.property.details', ['property_id' => $property->property_id]) }}"><img class="img-responsive" src="{{ asset('public/storage/' . $property->thumbnail) }}" alt="Thumbnail"></a>
                                             <a href="{{ route('page.property.details', ['property_id' => $property->property_id]) }}"><span class="property-status">For Sale</span></a>
                                         </div>
                                         <!-- .property-thumbnail -->

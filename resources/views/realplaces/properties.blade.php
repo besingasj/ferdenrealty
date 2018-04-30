@@ -49,7 +49,7 @@
                                                 <li>
                                                     <a title="Feature Image" data-rel="gallery-1" class="swipebox"
                                                        href="images/property/property-1-660x600.jpg">
-                                                        <img class="img-responsive" src="{{ asset('public/storage/P_' . $property->id . '-thumb.jpg') }}" alt="Thumbnail">
+                                                        <img class="img-responsive" src="{{ asset('public/storage/' . $property->thumbnail) }}" alt="Thumbnail">
                                                     </a>
                                                 </li>
                                             </ul>

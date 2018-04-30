@@ -11,7 +11,7 @@
         @if (is_null($property->featured_image))
                 <img src="http://via.placeholder.com/400x150?text=click%20to%20upload" id="featuredImage" class="img-thumbnail" alt="">
             @else
-                <img src="{{ asset('public/storage/P_' . $property->id . '-thumb.jpg') }}" id="featuredImage" class="img-thumbnail" alt="">
+                <img src="{{ asset('public/storage/' . $property->thumbnail) }}" id="featuredImage" class="img-thumbnail" alt="">
             <p class="text-muted"><i>click to change</i></p>
         @endif
     </div>

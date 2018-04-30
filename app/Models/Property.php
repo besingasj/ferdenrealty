@@ -16,6 +16,7 @@ class Property extends Model
         'location',
         'city',
         'featured_image',
+        'thumbnail',
         'gmap_longlitude',
         'gmap_latitude',
         'youtube_url',

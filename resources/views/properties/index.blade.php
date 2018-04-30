@@ -29,7 +29,7 @@
                                         <td>{{ $property->property_id }}</td>
                                         <td><a href="{{ route("properties.show", ['property_id' => $property->id]) }}">{{ $property->property_name }}</a></td>
                                         <td>
-                                            <img width="200" src="{{ asset('public/storage/P_' . $property->id . '-thumb.jpg') }}" alt="">
+                                            <img width="200" src="{{ asset('public/storage/' . $property->thumbnail) }}" alt="">
                                         </td>
                                         <td>{{ $property->location }}</td>
                                         <td>{{ $property->city }}</td>
