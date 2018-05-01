@@ -21,6 +21,7 @@ Route::get('/agents/profile/{agent_id}', "PageController@agentProfile")->name('p
 Route::post('/property/search', 'PropertyController@advanceSearch')->name('page.property.advance_search');
 
 Route::post('contact-agents/submit', 'AgentController@contactAgentSubmit')->name('contact.agents');
+Route::post('contact-agents/{id}', 'AgentController@contactAgentSingle')->name('contact.agents.single');
 
 Auth::routes();
 

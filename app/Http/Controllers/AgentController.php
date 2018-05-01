@@ -99,16 +99,19 @@ class AgentController extends Controller
                 Mail::to($agent)->send(new ContactAgents($request, $agent));
             }
         }
-        $data = [
-            'name' => $request->name,
-            'body' => $request->message
-        ];
 
-//        Mail::send('emails.mail', $data, function($message) use ($request) {
-//            $message->to('besingamk1@gmail.com', 'Mark Kevin Besinga')
-//                ->subject('Ferden Realty Corporation : Contact Agents');
-//            $message->from($request->email, $request->name);
-//        });
+        return response()->json([
+            'message' => 'Sent!'
+        ]);
+    }
+
+    public function contactAgentSingle(Request $request, $id)
+    {
+        $agent = User::find($id);
+
+        if (!is_null($agent)) {
+            Mail::to($agent)->send(new ContactAgents($request, $agent));
+        }
 
         return response()->json([
             'message' => 'Sent!'

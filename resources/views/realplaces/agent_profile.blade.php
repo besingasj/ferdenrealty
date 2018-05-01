@@ -99,7 +99,7 @@
                                         <div class="col-md-7 col-sm-6">
                                             <div class="agent-contact-form">
                                                 <h3 class="agent-contact-form-title">Contact Agent</h3>
-                                                <form id="agent-contact-form" class="contact-form-small" method="post" action="{{ route('contact.agents') }}" novalidate="novalidate">
+                                                <form id="agent-contact-form" class="contact-form-small" method="post" action="{{ route('contact.agents.single', ['id' => $agent->id]) }}" novalidate="novalidate">
                                                     @csrf
                                                     <div class="row">
                                                         <div class="col-sm-6 left-field">

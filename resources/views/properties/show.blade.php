@@ -189,11 +189,7 @@
                         </div>
                         <button type="submit" class="btn btn-info btn-fill btn-wd">Save Property</button>
                         {{-- <a href="" class="btn btn-danger btn-fill btn-wd">Delete Property</a> --}}
-                        <form action="{{ route('properties.destroy', ['property' => $property->id]) }}" method="POST">
-                            @method('DELETE')
-                            @csrf
-                            <button type="delete" id="deleteProperty" class="btn btn-danger btn-fill btn-wd">Delete Property</button>
-                        </form>
+
                         <div class="clearfix"></div>
                     </form>
                 </div>
@@ -262,6 +258,22 @@
 
 
                         <button class="btn btn-info btn-fill" id="addNewAdditionalFields">Add Fields</button> <input type="submit" class="btn btn-success btn-fill" value="Save">
+                    </form>
+                </div>
+            </div>
+
+
+
+            <div class="card">
+                <div class="header">
+                    <h1 class="title">Delete this property?</h1>
+                    <p class="text-muted">Deleted property can still be recovered.</p>
+                </div>
+                <div class="content">
+                    <form action="{{ route('properties.destroy', ['property' => $property->id]) }}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button type="delete" id="deleteProperty" class="btn btn-danger btn-fill btn-wd">Delete Property</button>
                     </form>
                 </div>
             </div>

@@ -206,11 +206,11 @@
                                 {{--</ul>--}}
                             {{--</div>--}}
                             <!-- .extra-search-fields -->
-                        </form>
-                        <!-- .advance-search-form -->
-                    </div>
-                    <!-- .container -->
-                </section> --}}
+                        {{--</form>--}}
+                        {{--<!-- .advance-search-form -->--}}
+                    {{--</div>--}}
+                    {{--<!-- .container -->--}}
+                {{--</section>--}}
                 <!-- .advance-search -->
                 <div class="property-listing-three">
                     <div class="container">
