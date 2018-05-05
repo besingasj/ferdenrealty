@@ -139,7 +139,7 @@
                                             <ul class="slides">
                                                 <li>
                                                     <a title="Feature Image" data-rel="gallery-1" class="swipebox"
-                                                       href="images/property/property-1-660x600.jpg">
+                                                       href="{{ asset('public/storage/' . $property->thumbnail) }}">
                                                         <img class="img-responsive" src="{{ asset('public/storage/' . $property->thumbnail) }}" alt="Thumbnail">
                                                     </a>
                                                 </li>

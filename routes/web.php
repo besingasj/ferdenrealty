@@ -55,3 +55,14 @@ Route::group(['middleware' => ["auth"], 'prefix' => 'dashboard'], function() {
     Route::post("upload/gallery/{property_id}", "ImageController@gallery")->name("image.gallery");
     Route::get('image/{image_id}/delete', "ImageController@delete")->name('images.delete');
 });
+
+
+Route::get('/sitemap', function() {
+    return response(view('sitemap'))->withHeaders([
+        'Content-Type' => 'text/xml'
+    ]);;
+});
+
+Route::get('about-us', function() {
+    return "about us";
+});

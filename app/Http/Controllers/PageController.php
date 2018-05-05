@@ -27,6 +27,20 @@ class PageController extends Controller
 
     public function properties($city = null)
     {
+        $cities = [
+            'taytay',
+            'cainta',
+            'antipolo',
+            'binangonan',
+            'teresa',
+            'pasig',
+            'quezon'
+        ];
+
+        if (!in_array($city, $cities)) {
+            return redirect('/');
+        }
+
         if (is_null($city)) {
             return redirect('/');
         }
@@ -38,7 +52,8 @@ class PageController extends Controller
         }
 
         return view('realplaces.properties', [
-            'properties' => $properties
+            'properties' => $properties,
+            'city' => $city
         ]);
     }
 

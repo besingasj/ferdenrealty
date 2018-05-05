@@ -26,9 +26,9 @@
                                                 <div class="agent-content-wrapper agent-common-styles">
                                                     <div class="inner-wrapper clearfix">
                                                         <figure class="agent-image">
-                                                            <a href="agent-single.html"><img class="img-circle" src="{{ asset('public/' . $agent->profile_photo) }}" alt="Nathan James"></a>
+                                                            <a href="{{ route('page.agent.profile', ['id' => $agent->id]) }}"><img class="img-circle" src="{{ asset('public/' . $agent->profile_photo) }}" alt="Nathan James"></a>
                                                         </figure>
-                                                        <h3 class="agent-name"><a href="agent-single.html">{{ $agent->name }}</a><span>Sales Manager</span></h3>
+                                                        <h3 class="agent-name"><a href="{{ route('page.agent.profile', ['id' => $agent->id]) }}">{{ $agent->name }}</a><span>Sales Manager</span></h3>
                                                         <div class="agent-social-profiles">
                                                             {{--<a class="twitter" target="_blank" href="#"><i class="fa fa-twitter"></i></a>--}}
                                                             <a class="facebook" target="_blank" href="{{ $agent->facebook_url }}"><i class="fa fa-facebook"></i></a>

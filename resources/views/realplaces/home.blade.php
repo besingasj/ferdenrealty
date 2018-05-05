@@ -1,5 +1,12 @@
 @extends('realplaces.layouts.home3')
 
+@section('title')
+Properties for sale in the Philippines | @endsection
+
+@section('meta-description')
+<meta name="description" content="For sale residential lot, house and lot, condominium real estate property finder in the philippines specially in rizal. Ferden Realty Doing Right Business Since 1999.">
+@endsection
+
 @section('content')
     <!-- .site-header -->
     <div class="homepage-slider slider-variation-three flexslider slider-loader">

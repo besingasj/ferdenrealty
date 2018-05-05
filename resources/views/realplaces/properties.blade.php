@@ -1,5 +1,8 @@
 @extends('realplaces.layouts.home3')
 
+@section('title')
+Properties for sale in {{ ucfirst($city) }} | @endsection
+
 @section('content')
     {{--<div class="page-head " style="background: url(public/realplaces/images/wide-banner.jpg) #494c53 no-repeat center top;  background-size: cover;">--}}
     <div class="page-head " style="background: #494c53 no-repeat center top;  background-size: cover;">
