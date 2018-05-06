@@ -64,5 +64,5 @@ Route::get('/sitemap', function() {
 });
 
 Route::get('about-us', function() {
-    return "about us";
+    return view('realplaces.about_us');
 });
