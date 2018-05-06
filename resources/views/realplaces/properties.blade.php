@@ -2,6 +2,18 @@
 
 @section('title')
 Properties for sale in {{ ucfirst($city) }} | @endsection
+@section('meta-description')
+@php
+    $descriptions = [
+        'taytay' => "Properties for sale in Taytay that is accesible via C6 or Ortigas Ext.",
+        'cainta'
+    ];
+@endphp
+
+@if (array_key_exists($city, $descriptions))
+    <meta name="description" content="{{ $descriptions[$city] }}">
+@endif
+@endsection
 
 @section('content')
     {{--<div class="page-head " style="background: url(public/realplaces/images/wide-banner.jpg) #494c53 no-repeat center top;  background-size: cover;">--}}
@@ -51,7 +63,7 @@ Properties for sale in {{ ucfirst($city) }} | @endsection
                                             <ul class="slides">
                                                 <li>
                                                     <a title="Feature Image" data-rel="gallery-1" class="swipebox"
-                                                       href="images/property/property-1-660x600.jpg">
+                                                       href="{{ asset('public/storage/' . $property->thumbnail) }}">
                                                         <img class="img-responsive" src="{{ asset('public/storage/' . $property->thumbnail) }}" alt="Thumbnail">
                                                     </a>
                                                 </li>
