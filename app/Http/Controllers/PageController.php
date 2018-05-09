@@ -15,7 +15,7 @@ class PageController extends Controller
         $sliders = Property::where('featured', true)->limit(3)->get();
         $propertyListingThree = Property::limit(3)->get();
         $featuredProperties = Property::where('featured', true)->get();
-        $agents = User::where('level', 'agent')->get();
+        $agents = User::where('level', 'agent')->orderBy('id', 'desc')->get();
 
         return view('realplaces.home', [
             'sliders' => $sliders,
