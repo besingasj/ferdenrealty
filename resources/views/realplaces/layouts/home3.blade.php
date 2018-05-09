@@ -61,14 +61,23 @@
 <div class="fb-customerchat"
   attribution="setup_tool"
   page_id="186086025080115"
-  theme_color="#cc0033">
+  theme_color="#0084ff">
 </div>
 <div class="page-loader">
     <img class="page-loader-img" src="{{ asset('public/realplaces/images/page-loader-img.gif') }}" alt="Page Loader"/>
 </div>
 <div id="mobile-header" class="mobile-header hidden-md hidden-lg">
-    <div class="contact-number">
-        
+    <div class="mobile-header-nav">
+        <ul class="user-nav">
+            <li><a href="{{ URL::to('/about-us') }}"><i class="fa fa-info"></i>About Us</a></li>
+            {{--<li><a class="login-register-link" href="#login-modal" data-toggle="modal"><svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="12" height="16" viewBox="0 0 12 16"><path class="icon-lock" fill="#737a84" d="M8.62046,16.09077h-4.994c-1.932 0-3.498-1.565-3.498-3.498v-6.494h2v-1.997c0-2.208 1.788-3.996 3.995-3.996s3.996 1.787 3.996 3.996v1.997h2v6.494c0 1.933-1.568 3.498-3.5 3.498zm-2.497-13.987c-1.104 0-2 .895-2 2v1.995h3.997v-1.998c0-1.104-.894-2-1.997-2zm3.996 5.995h-7.992v4.494c0 .828.67 1.5 1.5 1.5h4.993c.828 0 1.5-.672 1.5-1.5v-4.494zm-3.996 3.996c-.55 0-1-.447-1-1 0-.552.448-1 1-1s1 .448 1 1c0 .553-.448 1-1 1z"></path></svg>Login / Sign up</a></li>--}}
+            {{--<!--<li><a href="index.php"><i class="fa fa-sign-out"></i>Logout</a></li>-->--}}
+            <li><a href="{{ route('page.agents') }}"><i class="fa fa-users"></i>Our Agents</a></li>
+            <li><a href="https://www.facebook.com/romallyrealestate"><i class="fa fa-facebook"></i>Facebook</a></li>
+            {{--<li><a href="my-properties.php"><i class="fa fa-th-list"></i>My Properties</a></li>--}}
+            {{--<li><a href="favorites.php"><i class="fa fa-star"></i>Favorites</a></li>--}}
+            {{--<li><a class="submit-property-link" href="submit-property.php"><i class="fa fa-plus-circle"></i>Submit</a></li>--}}
+        </ul><!-- .user-nav -->
     </div>
 </div>
 <header class="site-header header header-variation-three">
@@ -86,13 +95,14 @@
             <div class="col-lg-9 zero-horizontal-padding hidden-xs hidden-sm">
                 <div class="header-top clearfix">
                     <div class="social-networks header-social-nav">
-                        <a class="twitter" target="_blank" href="#"><i class="fa fa-twitter"></i></a><a class="facebook" target="_blank" href="#"><i class="fa fa-facebook"></i></a><a class="gplus" target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
+                        {{-- <a class="twitter" target="_blank" href="#"><i class="fa fa-twitter"></i></a><a class="facebook" target="_blank" href="#"><i class="fa fa-facebook"></i></a><a class="gplus" target="_blank" href="#"><i class="fa fa-google-plus"></i></a> --}}
                     </div><!-- .social-networks -->
                     <ul class="user-nav">
-                    <li><a href="{{ URL::to('/about-us') }}">About Us</a></li>
+                        <li><a href="{{ URL::to('/about-us') }}"><i class="fa fa-info"></i>About Us</a></li>
                         {{--<li><a class="login-register-link" href="#login-modal" data-toggle="modal"><svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="12" height="16" viewBox="0 0 12 16"><path class="icon-lock" fill="#737a84" d="M8.62046,16.09077h-4.994c-1.932 0-3.498-1.565-3.498-3.498v-6.494h2v-1.997c0-2.208 1.788-3.996 3.995-3.996s3.996 1.787 3.996 3.996v1.997h2v6.494c0 1.933-1.568 3.498-3.5 3.498zm-2.497-13.987c-1.104 0-2 .895-2 2v1.995h3.997v-1.998c0-1.104-.894-2-1.997-2zm3.996 5.995h-7.992v4.494c0 .828.67 1.5 1.5 1.5h4.993c.828 0 1.5-.672 1.5-1.5v-4.494zm-3.996 3.996c-.55 0-1-.447-1-1 0-.552.448-1 1-1s1 .448 1 1c0 .553-.448 1-1 1z"></path></svg>Login / Sign up</a></li>--}}
                         {{--<!--<li><a href="index.php"><i class="fa fa-sign-out"></i>Logout</a></li>-->--}}
                         <li><a href="{{ route('page.agents') }}"><i class="fa fa-users"></i>Our Agents</a></li>
+                        <li><a href="https://www.facebook.com/romallyrealestate"><i class="fa fa-facebook"></i>Facebook</a></li>
                         {{--<li><a href="my-properties.php"><i class="fa fa-th-list"></i>My Properties</a></li>--}}
                         {{--<li><a href="favorites.php"><i class="fa fa-star"></i>Favorites</a></li>--}}
                         {{--<li><a class="submit-property-link" href="submit-property.php"><i class="fa fa-plus-circle"></i>Submit</a></li>--}}
@@ -216,7 +226,7 @@
                             {{--</ul>--}}
                         {{--</section>--}}
                     {{--</div>--}}
-                    <div class="col-sm-6 col-md-4">
+                    {{-- <div class="col-sm-6 col-md-4">
                         <section id="inspiry_social_media_icons-1" class="widget clearfix widget_inspiry_social_media_icons">
                             <h3 class="widget-title">Connect With Us</h3>
                             <div class="social-networks clearfix">
@@ -229,6 +239,22 @@
                                 <a class="pinterest" href="#" target="_blank"><i class="fa fa-pinterest fa-lg"></i></a>
                                 <a class="rss" href="#" target="_blank"><i class="fa fa-rss fa-lg"></i></a>
                             </div>
+                        </section>
+                    </div> --}}
+                    <div class="col-sm-6 col-md-4">
+                        <section class="widget clearfix widget_lc_taxonomy">
+                            <h3 class="widget-title">Property Types</h3>
+                            <ul>
+                                <li>
+                                    <a href="{{ route('aboutus') }}">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('page.agents') }}">Agents</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/romallyrealestate">Follow Us on Facebook</a>
+                                </li>
+                            </ul>
                         </section>
                     </div>
                 </div>

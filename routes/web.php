@@ -65,4 +65,4 @@ Route::get('/sitemap', function() {
 
 Route::get('about-us', function() {
     return view('realplaces.about_us');
-});
+})->name('aboutus');
