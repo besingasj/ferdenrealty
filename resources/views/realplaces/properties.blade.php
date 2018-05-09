@@ -1,12 +1,17 @@
 @extends('realplaces.layouts.home3')
 
 @section('title')
-Properties for sale in {{ ucfirst($city) }} | @endsection
+Properties for sale in {{ ucfirst($city) }} {{ $city == "quezon" ? "City" : '' }} | @endsection
 @section('meta-description')
 @php
     $descriptions = [
         'taytay' => "Properties for sale in Taytay that is accesible via C6 or Ortigas Ext.",
-        'cainta'
+        'cainta' => "Cainta Rizal House and lot for sale location wise near all major cities.",
+        'antipolo' => "Antipolo Rizal Overlooking & Flood Free House and Lot for Sale.",
+        'teresa' => "Teresa Rizal For Sale Properties with Nature Friendly Residential.",
+        'binangonan' => "Binangonan Residential House and Lot for Sale perfect investment next to develop province of Rizal.",
+        'pasig' => "Pasig City For Sale House and Lot near Ortigas Center, Pasig’s main business district.",
+        'quezon' => "Quezon City For Sale House and Lot, There are many potential business opportunities due to its large population and land area."
     ];
 @endphp
 

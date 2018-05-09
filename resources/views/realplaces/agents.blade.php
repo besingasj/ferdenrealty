@@ -72,7 +72,7 @@
                                                             Taytay Rizal, Philippines
                                                         </li>
                                                     </ul>
-                                                    <p>Donec ullamcorper nulla non metus auctor fringilla. Curabitur blandit tempus porttitor. Duis mollis, est non...</p>
+                                                    {{-- <p>Donec ullamcorper nulla non metus auctor fringilla. Curabitur blandit tempus porttitor. Duis mollis, est non...</p> --}}
                                                     <a class="btn-default show-details" href="{{ route('page.agent.profile', ['agent_id' => $agent->id]) }}">View Profile<i class="fa fa-angle-right"></i></a>
                                                 </div>
                                             </article>

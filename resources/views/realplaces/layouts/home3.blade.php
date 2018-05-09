@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msvalidate.01" content="A1B2CDEF1FC250F9CB04798A9BC69C47" />
     <title>@yield('title'){{ env('APP_NAME', "Ferden Realty Corporation") }}</title>
     @yield('meta-description')
     <link rel="alternate" href="http://ferdenrealtycorporation.com/" hreflang="en-PH"/>
@@ -67,43 +68,8 @@
 </div>
 <div id="mobile-header" class="mobile-header hidden-md hidden-lg">
     <div class="contact-number">
-        {{--<svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="10" height="16" viewBox="0 0 10 16">--}}
-            {{--<path class="icon-phone-two" fill="#cc0033" d="M7.06452,16.0606h-3.997c-1.653 0-2.995-1.342-2.995-2.998v-9.99c0-1.654 1.342-2.998 2.996-2.998h3.997c1.655 0 2.997 1.344 2.997 2.998v9.99c0 1.656-1.342 2.998-2.997 2.998zm1-5.822v-7.166c0-.55-.447-1-1-1h-3.995c-.552 0-1 .448-1 1v9.991c0 .552.447 1 1 1h3.995c.552 0 1-.448 1-1v-2.825zm-2.997 2.824c-.55 0-1-.447-1-.998 0-.553.448-1 1-1s1 .447 1 1c0 .55-.448.998-1 .998z"/>--}}
-        {{--</svg>--}}
-        {{--<span class="desktop-version hidden-xs">1-800-555-1234</span>--}}
-        {{--<a class="mobile-version visible-xs-inline-block" href="tel://1-800-555-1234" title="Make a Call">1-800-555-1234</a>--}}
+        
     </div>
-    <!-- .contact-number -->
-    {{--<div class="mobile-header-nav">--}}
-        {{--<ul class="user-nav">--}}
-            {{--<li>--}}
-                {{--<a href="mailto:agents@ferdenrealtycorporation.com">--}}
-                    {{--<svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="16" height="10" viewBox="0 0 16 10">--}}
-                        {{--<path class="icon-email-two" fill="#737a84" d="M15.09455,11.9789h-13.986c-.55 0-1-.447-1-1v-9.99c0-.55.448-.998 1-.998h13.986c.552 0 1 .447 1 1v9.99c0 .55-.448.998-1 .998zm-2.412-1.997l-3.02-3.02-.91.78c-.175.15-.402.24-.65.24-.25 0-.475-.09-.65-.24l-.913-.78-3.02 3.02h9.164zm-10.575-1.413l2.912-2.91-2.912-2.497v5.407zm1.703-6.58l4.291 3.679 4.293-3.68h-8.585zm7.375 3.67l2.912 2.91v-5.406l-2.912 2.495z"/>--}}
-                    {{--</svg>--}}
-                    {{--agents@ferdenrealtycorporation.com--}}
-                {{--</a>--}}
-            {{--</li>--}}
-            {{--<li>--}}
-                {{--<a class="login-register-link" href="#login-modal" data-toggle="modal">--}}
-                    {{--<svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="12" height="16" viewBox="0 0 12 16">--}}
-                        {{--<path class="icon-lock" fill="#737a84" d="M8.62046,16.09077h-4.994c-1.932 0-3.498-1.565-3.498-3.498v-6.494h2v-1.997c0-2.208 1.788-3.996 3.995-3.996s3.996 1.787 3.996 3.996v1.997h2v6.494c0 1.933-1.568 3.498-3.5 3.498zm-2.497-13.987c-1.104 0-2 .895-2 2v1.995h3.997v-1.998c0-1.104-.894-2-1.997-2zm3.996 5.995h-7.992v4.494c0 .828.67 1.5 1.5 1.5h4.993c.828 0 1.5-.672 1.5-1.5v-4.494zm-3.996 3.996c-.55 0-1-.447-1-1 0-.552.448-1 1-1s1 .448 1 1c0 .553-.448 1-1 1z"/>--}}
-                    {{--</svg>--}}
-                    {{--Login / Sign up--}}
-                {{--</a>--}}
-            {{--</li>--}}
-            {{--<!--<li><a href="index.html"><i class="fa fa-sign-out"></i>Logout</a></li>-->--}}
-            {{--<li><a href="profile.html"><i class="fa fa-user"></i>Profile</a></li>--}}
-            {{--<li><a href="my-properties.html"><i class="fa fa-th-list"></i>My Properties</a></li>--}}
-            {{--<li><a href="favorites.html"><i class="fa fa-star"></i>Favorites</a></li>--}}
-            {{--<li><a class="submit-property-link" href="submit-property.html"><i class="fa fa-plus-circle"></i>Submit Property</a></li>--}}
-        {{--</ul>--}}
-        {{--<!-- .user-nav -->--}}
-        {{--<div class="social-networks header-social-nav">--}}
-            {{--<a class="twitter" target="_blank" href="#"><i class="fa fa-twitter"></i></a><a class="facebook" target="_blank" href="#"><i class="fa fa-facebook"></i></a><a class="gplus" target="_blank" href="#"><i class="fa fa-google-plus"></i></a>--}}
-        {{--</div>--}}
-        {{--<!-- .social-networks -->--}}
-    {{--</div>--}}
 </div>
 <header class="site-header header header-variation-three">
     <div class="container">
@@ -123,10 +89,10 @@
                         <a class="twitter" target="_blank" href="#"><i class="fa fa-twitter"></i></a><a class="facebook" target="_blank" href="#"><i class="fa fa-facebook"></i></a><a class="gplus" target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
                     </div><!-- .social-networks -->
                     <ul class="user-nav">
-                        <li><a href="mailto:lly.baloloy@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="16" height="10" viewBox="0 0 16 10"><path class="icon-email-two" fill="#737a84" d="M15.09455,11.9789h-13.986c-.55 0-1-.447-1-1v-9.99c0-.55.448-.998 1-.998h13.986c.552 0 1 .447 1 1v9.99c0 .55-.448.998-1 .998zm-2.412-1.997l-3.02-3.02-.91.78c-.175.15-.402.24-.65.24-.25 0-.475-.09-.65-.24l-.913-.78-3.02 3.02h9.164zm-10.575-1.413l2.912-2.91-2.912-2.497v5.407zm1.703-6.58l4.291 3.679 4.293-3.68h-8.585zm7.375 3.67l2.912 2.91v-5.406l-2.912 2.495z"></path></svg>agents@ferdenrealtycorporation.com</a></li>
+                    <li><a href="{{ URL::to('/about-us') }}">About Us</a></li>
                         {{--<li><a class="login-register-link" href="#login-modal" data-toggle="modal"><svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="12" height="16" viewBox="0 0 12 16"><path class="icon-lock" fill="#737a84" d="M8.62046,16.09077h-4.994c-1.932 0-3.498-1.565-3.498-3.498v-6.494h2v-1.997c0-2.208 1.788-3.996 3.995-3.996s3.996 1.787 3.996 3.996v1.997h2v6.494c0 1.933-1.568 3.498-3.5 3.498zm-2.497-13.987c-1.104 0-2 .895-2 2v1.995h3.997v-1.998c0-1.104-.894-2-1.997-2zm3.996 5.995h-7.992v4.494c0 .828.67 1.5 1.5 1.5h4.993c.828 0 1.5-.672 1.5-1.5v-4.494zm-3.996 3.996c-.55 0-1-.447-1-1 0-.552.448-1 1-1s1 .448 1 1c0 .553-.448 1-1 1z"></path></svg>Login / Sign up</a></li>--}}
                         {{--<!--<li><a href="index.php"><i class="fa fa-sign-out"></i>Logout</a></li>-->--}}
-                        <li><a href="{{ route('page.agents') }}"><i class="fa fa-users"></i>Agents</a></li>
+                        <li><a href="{{ route('page.agents') }}"><i class="fa fa-users"></i>Our Agents</a></li>
                         {{--<li><a href="my-properties.php"><i class="fa fa-th-list"></i>My Properties</a></li>--}}
                         {{--<li><a href="favorites.php"><i class="fa fa-star"></i>Favorites</a></li>--}}
                         {{--<li><a class="submit-property-link" href="submit-property.php"><i class="fa fa-plus-circle"></i>Submit</a></li>--}}
