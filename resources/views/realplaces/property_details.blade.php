@@ -12,7 +12,7 @@
                                     <ul id="image-gallery" class="list-unstyled">
                                         @foreach ($images as $image)
                                         <li data-thumb="{{ asset('public/storage/' . $image->path) }}">
-                                            <a class="swipebox" data-rel="gallery12" href="{{ asset('public/storage/' . $image->path) }}"><img src="{{ asset('public/storage/' . $image->path) }}" alt="{{ $property->property_name }}"></a>
+                                            <a class="swipebox" data-rel="gallery12" href="{{ asset('public/storage/' . $image->path) }}"><img src="{{ asset('public/storage/' . $image->path) }}" alt="{{ $property->property_name }}" class="img-responsive"></a>
                                         </li>
                                         @endforeach
                                         {{--<li data-thumb="images/property/property-interior-19-850x570.jpg">--}}

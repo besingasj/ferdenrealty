@@ -28,7 +28,7 @@ class AdvancePropertySearchRequest extends FormRequest
             'type',
             'keyword',
             'property-id',
-            'bedrooms'
+            'bedrooms',
             'bathrooms',
             'min-price',
             'max-price',
