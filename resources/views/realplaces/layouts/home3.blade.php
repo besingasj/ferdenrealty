@@ -48,21 +48,21 @@
 </head>
 <body class="inspiry-slider-two">
 <!-- Load Facebook SDK for JavaScript -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+{{--<div id="fb-root"></div>--}}
+{{--<script>(function(d, s, id) {--}}
+  {{--var js, fjs = d.getElementsByTagName(s)[0];--}}
+  {{--if (d.getElementById(id)) return;--}}
+  {{--js = d.createElement(s); js.id = id;--}}
+  {{--js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';--}}
+  {{--fjs.parentNode.insertBefore(js, fjs);--}}
+{{--}(document, 'script', 'facebook-jssdk'));</script>--}}
 
-<!-- Your customer chat code -->
-<div class="fb-customerchat"
-  attribution="setup_tool"
-  page_id="186086025080115"
-  theme_color="#0084ff">
-</div>
+{{--<!-- Your customer chat code -->--}}
+{{--<div class="fb-customerchat"--}}
+  {{--attribution="setup_tool"--}}
+  {{--page_id="186086025080115"--}}
+  {{--theme_color="#0084ff">--}}
+{{--</div>--}}
 <div class="page-loader">
     <img class="page-loader-img" src="{{ asset('public/realplaces/images/page-loader-img.gif') }}" alt="Page Loader"/>
 </div>
@@ -98,14 +98,41 @@
                         {{-- <a class="twitter" target="_blank" href="#"><i class="fa fa-twitter"></i></a><a class="facebook" target="_blank" href="#"><i class="fa fa-facebook"></i></a><a class="gplus" target="_blank" href="#"><i class="fa fa-google-plus"></i></a> --}}
                     </div><!-- .social-networks -->
                     <ul class="user-nav">
-                        <li><a href="{{ URL::to('/about-us') }}"><i class="fa fa-info"></i>About Us</a></li>
+                        {{--<li><a href="{{ URL::to('/about-us') }}"><i class="fa fa-info"></i>About Us</a></li>--}}
                         {{--<li><a class="login-register-link" href="#login-modal" data-toggle="modal"><svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="12" height="16" viewBox="0 0 12 16"><path class="icon-lock" fill="#737a84" d="M8.62046,16.09077h-4.994c-1.932 0-3.498-1.565-3.498-3.498v-6.494h2v-1.997c0-2.208 1.788-3.996 3.995-3.996s3.996 1.787 3.996 3.996v1.997h2v6.494c0 1.933-1.568 3.498-3.5 3.498zm-2.497-13.987c-1.104 0-2 .895-2 2v1.995h3.997v-1.998c0-1.104-.894-2-1.997-2zm3.996 5.995h-7.992v4.494c0 .828.67 1.5 1.5 1.5h4.993c.828 0 1.5-.672 1.5-1.5v-4.494zm-3.996 3.996c-.55 0-1-.447-1-1 0-.552.448-1 1-1s1 .448 1 1c0 .553-.448 1-1 1z"></path></svg>Login / Sign up</a></li>--}}
                         {{--<!--<li><a href="index.php"><i class="fa fa-sign-out"></i>Logout</a></li>-->--}}
-                        <li><a href="{{ route('page.agents') }}"><i class="fa fa-users"></i>Our Agents</a></li>
-                        <li><a href="https://www.facebook.com/romallyrealestate"><i class="fa fa-facebook"></i>Facebook</a></li>
+                        {{--<li><a href="{{ route('page.agents') }}"><i class="fa fa-users"></i>Our Agents</a></li>--}}
+                        {{--<li><a href="https://www.facebook.com/romallyrealestate"><i class="fa fa-facebook"></i>Facebook</a></li>--}}
                         {{--<li><a href="my-properties.php"><i class="fa fa-th-list"></i>My Properties</a></li>--}}
                         {{--<li><a href="favorites.php"><i class="fa fa-star"></i>Favorites</a></li>--}}
                         {{--<li><a class="submit-property-link" href="submit-property.php"><i class="fa fa-plus-circle"></i>Submit</a></li>--}}
+                        <li class="{{ strpos(url()->current(), 'taytay') > 0 ? 'current-menu-item' : '' }}">
+                        <a href="{{ route('page.properties', ['city' => "taytay"]) }}">Taytay</a>
+                        </li>
+                        <li class="{{ strpos(url()->current(), 'cainta') > 0 ? 'current-menu-item' : '' }}">
+                        <a href="{{ route('page.properties', ['city' => "cainta"]) }}">Cainta</a>
+                        </li>
+                        <li class="{{ strpos(url()->current(), 'antipolo') > 0 ? 'current-menu-item' : '' }}">
+                        <a href="{{ route('page.properties', ['city' => "antipolo"]) }}">Antipolo</a>
+                        </li>
+                        <li class="{{ strpos(url()->current(), 'binangonan') > 0 ? 'current-menu-item' : '' }}">
+                        <a href="{{ route('page.properties', ['city' => "binangonan"]) }}">Binangonan</a>
+                        </li>
+                        <li class="{{ strpos(url()->current(), 'teresa') > 0 ? 'current-menu-item' : '' }}">
+                        <a href="{{ route('page.properties', ['city' => "teresa"]) }}">Teresa</a>
+                        </li>
+                        <li class="{{ strpos(url()->current(), 'pasig') > 0 ? 'current-menu-item' : '' }}">
+                        <a href="{{ route('page.properties', ['city' => "pasig"]) }}">Pasig</a>
+                        </li>
+                        <li class="{{ strpos(url()->current(), 'quezon') > 0 ? 'current-menu-item' : '' }}">
+                        <a href="{{ route('page.properties', ['city' => "quezon"]) }}">Quezon City</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('page.properties', ['city' => "cavite"]) }}">Cavite</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('page.properties', ['city' => "laguna"]) }}">Laguna</a>
+                        </li>
                     </ul><!-- .user-nav -->
                 </div>
                 <!-- .header-top -->
@@ -123,27 +150,33 @@
                             <li class="{{ Request::is('/') ? 'current-menu-item' : '' }}">
                                 <a href="{{ route('page.index') }}">Home</a>
                             </li>
-                            <li class="{{ strpos(url()->current(), 'taytay') > 0 ? 'current-menu-item' : '' }}">
-                                <a href="{{ route('page.properties', ['city' => "taytay"]) }}">Taytay</a>
-                            </li>
-                            <li class="{{ strpos(url()->current(), 'cainta') > 0 ? 'current-menu-item' : '' }}">
-                                <a href="{{ route('page.properties', ['city' => "cainta"]) }}">Cainta</a>
-                            </li>
-                            <li class="{{ strpos(url()->current(), 'antipolo') > 0 ? 'current-menu-item' : '' }}">
-                                <a href="{{ route('page.properties', ['city' => "antipolo"]) }}">Antipolo</a>
-                            </li>
-                            <li class="{{ strpos(url()->current(), 'binangonan') > 0 ? 'current-menu-item' : '' }}">
-                                <a href="{{ route('page.properties', ['city' => "binangonan"]) }}">Binangonan</a>
-                            </li>
-                            <li class="{{ strpos(url()->current(), 'teresa') > 0 ? 'current-menu-item' : '' }}">
-                                <a href="{{ route('page.properties', ['city' => "teresa"]) }}">Teresa</a>
-                            </li>
-                            <li class="{{ strpos(url()->current(), 'pasig') > 0 ? 'current-menu-item' : '' }}">
-                                <a href="{{ route('page.properties', ['city' => "pasig"]) }}">Pasig</a>
-                            </li>
-                            <li class="{{ strpos(url()->current(), 'quezon') > 0 ? 'current-menu-item' : '' }}">
-                                <a href="{{ route('page.properties', ['city' => "quezon"]) }}">Quezon City</a>
-                            </li>
+                            {{--<li><a href="{{ route('page.agents') }}">--}}{{--<i class="fa fa-users"></i>--}}{{--House N Lot</a></li>--}}
+                            {{--<li><a href="{{ route('page.agents') }}">--}}{{--<i class="fa fa-users"></i>--}}{{--Condo</a></li>--}}
+                            <li class="{{ Request::is('about-us') ? 'current-menu-item' : '' }}"><a href="{{ URL::to('/about-us') }}">{{--<i class="fa fa-info"></i>--}}Condo</a></li>
+                            <li class="{{ Request::is('about-us') ? 'current-menu-item' : '' }}"><a href="{{ URL::to('/about-us') }}">{{--<i class="fa fa-info"></i>--}}About Us</a></li>
+                            <li class="{{ Request::is('agents') ? 'current-menu-item' : '' }}"><a href="{{ route('page.agents') }}">{{--<i class="fa fa-users"></i>--}}Our Agents</a></li>
+                            <li class=""><a href="https://www.facebook.com/romallyrealestate">{{--<i class="fa fa-facebook"></i>--}}Facebook</a></li>
+                            {{--<li class="{{ strpos(url()->current(), 'taytay') > 0 ? 'current-menu-item' : '' }}">--}}
+                                {{--<a href="{{ route('page.properties', ['city' => "taytay"]) }}">Taytay</a>--}}
+                            {{--</li>--}}
+                            {{--<li class="{{ strpos(url()->current(), 'cainta') > 0 ? 'current-menu-item' : '' }}">--}}
+                                {{--<a href="{{ route('page.properties', ['city' => "cainta"]) }}">Cainta</a>--}}
+                            {{--</li>--}}
+                            {{--<li class="{{ strpos(url()->current(), 'antipolo') > 0 ? 'current-menu-item' : '' }}">--}}
+                                {{--<a href="{{ route('page.properties', ['city' => "antipolo"]) }}">Antipolo</a>--}}
+                            {{--</li>--}}
+                            {{--<li class="{{ strpos(url()->current(), 'binangonan') > 0 ? 'current-menu-item' : '' }}">--}}
+                                {{--<a href="{{ route('page.properties', ['city' => "binangonan"]) }}">Binangonan</a>--}}
+                            {{--</li>--}}
+                            {{--<li class="{{ strpos(url()->current(), 'teresa') > 0 ? 'current-menu-item' : '' }}">--}}
+                                {{--<a href="{{ route('page.properties', ['city' => "teresa"]) }}">Teresa</a>--}}
+                            {{--</li>--}}
+                            {{--<li class="{{ strpos(url()->current(), 'pasig') > 0 ? 'current-menu-item' : '' }}">--}}
+                                {{--<a href="{{ route('page.properties', ['city' => "pasig"]) }}">Pasig</a>--}}
+                            {{--</li>--}}
+                            {{--<li class="{{ strpos(url()->current(), 'quezon') > 0 ? 'current-menu-item' : '' }}">--}}
+                                {{--<a href="{{ route('page.properties', ['city' => "quezon"]) }}">Quezon City</a>--}}
+                            {{--</li>--}}
                         </ul>
                     </nav>
                 </div>
