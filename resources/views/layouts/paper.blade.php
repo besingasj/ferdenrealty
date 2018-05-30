@@ -56,6 +56,12 @@
                         <p>Properties</p>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('properties.amenites.index') }}">
+                        <i class="ti-plus"></i>
+                        <p>Amenities</p>
+                    </a>
+                </li>
                 {{--<li>--}}
                     {{--<a href="{{ route('agents.index') }}">--}}
                         {{--<i class="ti-user"></i>--}}
@@ -76,7 +82,7 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Dashboard</a>
+                    <a class="navbar-brand" href="{{ route('properties.index') }}">Dashboard</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
