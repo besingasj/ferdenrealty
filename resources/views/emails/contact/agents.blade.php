@@ -8,5 +8,6 @@
 this email is referring to {{ $data->server('HTTP_REFERER') }}
 
 Thanks,<br>
-{{ $data->name }}
+{{ $data->name }}<br />
+{{ $data->email }}
 @endcomponent

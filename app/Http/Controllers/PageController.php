@@ -13,7 +13,7 @@ class PageController extends Controller
     public function index()
     {
         $sliders = Property::where('featured', true)->limit(3)->get();
-        $propertyListingThree = Property::limit(3)->get();
+        $propertyListingThree = Property::where('deals', 1)->get();
         $featuredProperties = Property::where('featured', true)->get();
         $agents = User::where('level', 'agent')->orderBy('id', 'desc')->get();
 
@@ -34,7 +34,9 @@ class PageController extends Controller
             'binangonan',
             'teresa',
             'pasig',
-            'quezon'
+            'quezon',
+            'cavite',
+            'laguna'
         ];
 
         if (!in_array($city, $cities)) {
@@ -61,7 +63,7 @@ class PageController extends Controller
     {
         $property = Property::where('property_id', $property_id)->first();
         $images = Image::where('property_id', $property->id)->get();
-        $additional_details = AdditionalDetails::where('property_id', $property->id)->orderBy('created_at', 'desc')->get();
+        $additional_details = AdditionalDetails::where('property_id', $property->id)->orderBy('position', 'asc')->get();
 
         $similar_properties = Property::where('property_id', '!=', $property_id)->limit(5)->get();
 

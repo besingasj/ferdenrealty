@@ -242,11 +242,17 @@
                             @foreach ($property->additionalDetails as $detail)
                                 <div class="row">
                                     <div class="form-group">
-                                        <div class="col-md-6">
+                                        <div class="col-md-2">
+                                            <input type="text" name="additional[detail_{{ $additionalDetailsIteration }}][position]" class="form-control border-input" value="{{ $detail->position }}" placeholder="position">
+                                        </div>
+                                        <div class="col-md-4">
                                             <input type="text" name="additional[detail_{{ $additionalDetailsIteration }}][field]" class="form-control border-input" value="{{ $detail->fields }}" placeholder="custom field">
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <input type="text" name="additional[detail_{{ $additionalDetailsIteration }}][value]" class="form-control border-input" value="{{ $detail->value }}" placeholder="value">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <a href="{{ route('additional_details.delete', ['id' => $detail->id, 'property_id' => $property->id]) }}" class="btn btn-sm btn-danger btn-fill"><i class="fa fa-trash"></i></a>
                                         </div>
                                     </div>
                                 </div>

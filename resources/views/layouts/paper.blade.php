@@ -50,13 +50,13 @@
             </div>
 
             <ul class="nav">
-                <li class="active">
+                <li class="{{ strpos(url()->current(), 'properties') > 0 ? 'active' : '' }}">
                     <a href="{{ route('properties.index') }}">
                         <i class="ti-view-list-alt"></i>
                         <p>Properties</p>
                     </a>
                 </li>
-                <li>
+                <li class="{{ strpos(url()->current(), 'amenities') > 0 ? 'active' : '' }}">
                     <a href="{{ route('properties.amenites.index') }}">
                         <i class="ti-plus"></i>
                         <p>Amenities</p>

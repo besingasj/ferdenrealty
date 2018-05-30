@@ -69,6 +69,7 @@
 <div id="mobile-header" class="mobile-header hidden-md hidden-lg">
     <div class="mobile-header-nav">
         <ul class="user-nav">
+            <li><a href="{{ route('page.index') }}"><i class="fa fa-home"></i>Home</a></li>
             <li><a href="{{ URL::to('/about-us') }}"><i class="fa fa-info"></i>About Us</a></li>
             {{--<li><a class="login-register-link" href="#login-modal" data-toggle="modal"><svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="12" height="16" viewBox="0 0 12 16"><path class="icon-lock" fill="#737a84" d="M8.62046,16.09077h-4.994c-1.932 0-3.498-1.565-3.498-3.498v-6.494h2v-1.997c0-2.208 1.788-3.996 3.995-3.996s3.996 1.787 3.996 3.996v1.997h2v6.494c0 1.933-1.568 3.498-3.5 3.498zm-2.497-13.987c-1.104 0-2 .895-2 2v1.995h3.997v-1.998c0-1.104-.894-2-1.997-2zm3.996 5.995h-7.992v4.494c0 .828.67 1.5 1.5 1.5h4.993c.828 0 1.5-.672 1.5-1.5v-4.494zm-3.996 3.996c-.55 0-1-.447-1-1 0-.552.448-1 1-1s1 .448 1 1c0 .553-.448 1-1 1z"></path></svg>Login / Sign up</a></li>--}}
             {{--<!--<li><a href="index.php"><i class="fa fa-sign-out"></i>Logout</a></li>-->--}}
@@ -79,6 +80,9 @@
             {{--<li><a class="submit-property-link" href="submit-property.php"><i class="fa fa-plus-circle"></i>Submit</a></li>--}}
         </ul><!-- .user-nav -->
     </div>
+    <div class="contact-number pull-left">
+        <span><i class="fa fa-arrow-left"></i> click for menus</span>
+    </div>
 </div>
 <header class="site-header header header-variation-three">
     <div class="container">
@@ -87,7 +91,7 @@
                 <div id="site-logo" class="site-logo">
                     <div class="logo-inner-wrapper">
                         <a href="{{ route('page.index') }}"><img src="{{ asset('public/realplaces/images/ferden-logo.png') }}" alt="Logo"/></a>
-                        <small class="tag-line">Where Dreams Come Home</small>
+                        {{--<small class="tag-line">Where Dreams Come Home</small>--}}
                     </div>
                 </div>
             </div>
@@ -98,6 +102,8 @@
                         {{-- <a class="twitter" target="_blank" href="#"><i class="fa fa-twitter"></i></a><a class="facebook" target="_blank" href="#"><i class="fa fa-facebook"></i></a><a class="gplus" target="_blank" href="#"><i class="fa fa-google-plus"></i></a> --}}
                     </div><!-- .social-networks -->
                     <ul class="user-nav">
+                        <li><a href="{{ route('page.index') }}"><i class="fa fa-home"></i>Home</a></li>
+                        {{--<li><a href="{{ route('page.index') }}">Home</a></li>--}}
                         <li><a href="{{ URL::to('/about-us') }}"><i class="fa fa-info"></i>About Us</a></li>
                         {{--<li><a class="login-register-link" href="#login-modal" data-toggle="modal"><svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="12" height="16" viewBox="0 0 12 16"><path class="icon-lock" fill="#737a84" d="M8.62046,16.09077h-4.994c-1.932 0-3.498-1.565-3.498-3.498v-6.494h2v-1.997c0-2.208 1.788-3.996 3.995-3.996s3.996 1.787 3.996 3.996v1.997h2v6.494c0 1.933-1.568 3.498-3.5 3.498zm-2.497-13.987c-1.104 0-2 .895-2 2v1.995h3.997v-1.998c0-1.104-.894-2-1.997-2zm3.996 5.995h-7.992v4.494c0 .828.67 1.5 1.5 1.5h4.993c.828 0 1.5-.672 1.5-1.5v-4.494zm-3.996 3.996c-.55 0-1-.447-1-1 0-.552.448-1 1-1s1 .448 1 1c0 .553-.448 1-1 1z"></path></svg>Login / Sign up</a></li>--}}
                         {{--<!--<li><a href="index.php"><i class="fa fa-sign-out"></i>Logout</a></li>-->--}}
@@ -120,9 +126,9 @@
                     <!-- .contact-number -->
                     <nav id="site-main-nav" class="site-main-nav">
                         <ul class="main-menu clearfix">
-                            <li class="{{ Request::is('/') ? 'current-menu-item' : '' }}">
-                                <a href="{{ route('page.index') }}">Home</a>
-                            </li>
+                            {{--<li class="{{ Request::is('/') ? 'current-menu-item' : '' }}">--}}
+                                {{--<a href="{{ route('page.index') }}">Home</a>--}}
+                            {{--</li>--}}
                             <li class="{{ strpos(url()->current(), 'taytay') > 0 ? 'current-menu-item' : '' }}">
                                 <a href="{{ route('page.properties', ['city' => "taytay"]) }}">Taytay</a>
                             </li>
@@ -143,6 +149,12 @@
                             </li>
                             <li class="{{ strpos(url()->current(), 'quezon') > 0 ? 'current-menu-item' : '' }}">
                                 <a href="{{ route('page.properties', ['city' => "quezon"]) }}">Quezon City</a>
+                            </li>
+                            <li class="{{ strpos(url()->current(), 'cavite') > 0 ? 'current-menu-item' : '' }}">
+                                <a href="{{ route('page.properties', ['city' => "cavite"]) }}">Cavite</a>
+                            </li>
+                            <li class="{{ strpos(url()->current(), 'laguna') > 0 ? 'current-menu-item' : '' }}">
+                                <a href="{{ route('page.properties', ['city' => "laguna"]) }}">Laguna</a>
                             </li>
                         </ul>
                     </nav>
@@ -173,22 +185,29 @@
                         <section class="widget clearfix widget_lc_taxonomy">
                             <h3 class="widget-title">Locations</h3>
                             <ul>
-                                <li>
-                                    @php
-                                        $cities = [
-                                            'taytay',
-                                            'cainta',
-                                            'antipolo',
-                                            'binangonan',
-                                            'teresa',
-                                            'pasig',
-                                            'quezon'
-                                        ];
-                                    @endphp
+                                @php
+                                    $cities = [
+                                        'taytay',
+                                        'cainta',
+                                        'antipolo',
+                                        'binangonan',
+                                        'teresa',
+                                        'pasig',
+                                        'quezon',
+                                        'cavite',
+                                        'laguna'
+                                    ];
+
+                                    $chucked_cities = array_chunk($cities, 2);
+                                @endphp
+                                <li class="pull-left">
+
                                     <ul>
-                                    @foreach ($cities as $city)
-                                        <li><a href="{{ route('page.properties', ['city' => $city]) }}">{{ ucfirst($city) }} {{ $city == "quezon" ? "City" : '' }}</a></li>
-                                    @endforeach
+                                        @foreach ($chucked_cities as $city)
+                                            @if (count($city) > 0)
+                                            <li><a href="{{ route('page.properties', ['city' => $city[0]]) }}">{{ ucfirst($city[0]) }} {{ $city[0] == "quezon" ? "City" : '' }}</a></li>
+                                            @endif
+                                        @endforeach
                                     </ul>
                                     {{--<a href="#">Miami</a> (12)--}}
                                     {{--<ul class="children">--}}
@@ -196,6 +215,15 @@
                                         {{--<li><a href="#">Perrine</a> (1)</li>--}}
                                         {{--<li><a href="#">Doral</a> (1)</li>--}}
                                     {{--</ul>--}}
+                                </li>
+                                <li class="pull-left" style="padding-left: 10px">
+                                    <ul>
+                                        @foreach ($chucked_cities as $city)
+                                            @if (count($city) > 0 && isset($city[1]))
+                                            <li><a href="{{ route('page.properties', ['city' => $city[1]]) }}">{{ ucfirst($city[1]) }} {{ $city[1] == "quezon" ? "City" : '' }}</a></li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
                                 </li>
                             </ul>
                         </section>

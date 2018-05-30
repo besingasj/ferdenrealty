@@ -28,12 +28,13 @@ class Property extends Model
         'car_garage',
         'amenities',
         'price',
-        'featured'
+        'featured',
+        'deals'
     ];
 
     public function additionalDetails()
     {
-        return $this->hasMany(AdditionalDetails::class);
+        return $this->hasMany(AdditionalDetails::class)->orderBy('position', 'asc');
     }
 
     public function images()

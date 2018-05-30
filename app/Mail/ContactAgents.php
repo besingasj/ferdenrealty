@@ -34,7 +34,7 @@ class ContactAgents extends Mailable
      */
     public function build()
     {
-        return $this->from("donotreply@ferdenrealtycorporation.com", "Ferden Realty Corporation")
+        return $this->from($this->data->email, $this->data->name)
                     ->markdown('emails.contact.agents');
     }
 }

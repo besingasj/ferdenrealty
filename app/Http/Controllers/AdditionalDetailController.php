@@ -21,6 +21,7 @@ class AdditionalDetailController extends Controller
             }
 
             $additional_details->property_id = $property_id;
+            $additional_details->position = (isset($value['position'])) ? $value['position'] : null;
             $additional_details->fields = $value['field'];
             $additional_details->value = $value['value'];
 
@@ -30,5 +31,20 @@ class AdditionalDetailController extends Controller
         return redirect()->route('properties.show', [
             'id' => $property_id
         ])->with('additional_details_success_message', 'new details saved');
+    }
+
+    public function destroy($id, $property_id)
+    {
+        $delete_message = "";
+        $detail = AdditionalDetails::where('id', $id)->where('property_id', $property_id)->first();
+
+        if (!is_null($detail)) {
+            $detail->delete();
+            $delete_message = "Additional Details Deleted";
+        }
+
+        $delete_message = "Additional Details not found";
+
+        return redirect()->route('properties.show', ['id' => $property_id])->with('additional_details_success_message', $delete_message);;
     }
 }

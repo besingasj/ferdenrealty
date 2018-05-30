@@ -16,6 +16,20 @@
                     <a href="{{ route('properties.create') }}" class="btn btn-success pull-right">Add Property</a>
                 </div>
                 <div class="content table-responsive table-full-width">
+                    @if (session('additional_details_success_message'))
+                        <p class="text-success">{{ session('additional_details_success_message') }}</p>
+                    @endif
+                    @if (session('deals_error_message'))
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="alert alert-danger">
+                                    <button type="button" aria-hidden="true" class="close">×</button>
+                                    <span><b> Opps! </b>{{ session('deals_error_message') }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+
                     @if (count($properties) > 0)
                         <table class="table table-striped">
                             <thead>
@@ -26,6 +40,7 @@
                                 <th>LOCATION</th>
                                 <th>CITY</th>
                                 <th>Featured?</th>
+                                <th>Deals?</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -35,7 +50,7 @@
                                         <td>{{ $property->property_id }}</td>
                                         <td><a href="{{ route("properties.show", ['property_id' => $property->id]) }}">{{ $property->property_name }}</a></td>
                                         <td>
-                                            <img width="200" src="{{ asset('public/storage/' . $property->thumbnail) }}" alt="">
+                                            <img width="100" src="{{ asset('public/storage/' . $property->thumbnail) }}" alt="">
                                         </td>
                                         <td>{{ $property->location }}</td>
                                         <td>{{ $property->city }}</td>
@@ -46,6 +61,11 @@
                                                 <a class="btn btn-success" href="{{ route('properties.toggleFeatured', ['id' => $property->id]) }}">featured</a>
                                             @endif
                                         </td>
+                                        <td>@if ($property->deals)
+                                                <a class="btn btn-success btn-fill" href="{{ route('properties.toggleDeals', ['id' => $property->id]) }}">Yes</a>
+                                            @else
+                                                <a class="btn btn-success" href="{{ route('properties.toggleDeals', ['id' => $property->id]) }}">No</a>
+                                            @endif</td>
                                     </tr>
                                 @endforeach
                             </tbody>

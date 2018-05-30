@@ -37,7 +37,9 @@ class PropertyController extends Controller
             'binangonan',
             'teresa',
             'pasig',
-            'quezon'
+            'quezon',
+            'cavite',
+            'laguna'
         ];
         return view('properties.create', [
             'cities' => $cities
@@ -107,7 +109,9 @@ class PropertyController extends Controller
             'binangonan',
             'teresa',
             'pasig',
-            'quezon'
+            'quezon',
+            'cavite',
+            'laguna'
         ];
 
         $amenities = Amenity::all();
@@ -190,6 +194,23 @@ class PropertyController extends Controller
         return redirect()->route('properties.index')->with([
             'toogleFeatured_success_message' => $property->featured ? "Featured Property" : "Unfeatured Property"
         ]);
+    }
+
+    public function toggleDeals($property_id)
+    {
+        $property = Property::find($property_id);
+        $deals = Property::where('deals', 1)->count();
+
+        if ($deals >= 3) {
+            return redirect()->route('properties.index')->with([
+                'deals_error_message' => "Maximum of 3 deals."
+            ]);
+        }
+
+        $property->deals = !$property->deals;
+        $property->save();
+
+        return redirect()->route('properties.index');
     }
 
     public function advanceSearch(AdvancePropertySearchRequest $request) 

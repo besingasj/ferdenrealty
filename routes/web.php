@@ -38,6 +38,8 @@ Route::group(['middleware' => ["auth"], 'prefix' => 'dashboard'], function() {
     Route::get("properties/search", "PropertyController@searchProperty")->name('properties.search');
     Route::resource("properties", "PropertyController");
     Route::get('property/{property_id}/toggleFeatured', "PropertyController@toggleFeatured")->name('properties.toggleFeatured');
+    // toggleDeals
+    Route::get('property/{property_id}/toggleDeals', "PropertyController@toggleDeals")->name('properties.toggleDeals');
 
     //     Route::get('agents', "HomeController@agents")->name('agents.index');
     //     Route::get('agents/create', "")
@@ -50,6 +52,7 @@ Route::group(['middleware' => ["auth"], 'prefix' => 'dashboard'], function() {
     Route::get('amenities/{id}', 'AmenityController@delete')->name('properties.amenities.delete');
 
     Route::post("additional_details/{property_id}", "AdditionalDetailController@saveNew")->name("additional_details.new");
+    Route::get("additional_details/{id}/{property_id}", "AdditionalDetailController@destroy")->name("additional_details.delete");
 
     Route::post("upload/featured/{property_id}", "ImageController@featured")->name("image.featured");
     Route::post("upload/gallery/{property_id}", "ImageController@gallery")->name("image.gallery");
