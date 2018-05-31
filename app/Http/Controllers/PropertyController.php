@@ -201,7 +201,7 @@ class PropertyController extends Controller
         $property = Property::find($property_id);
         $deals = Property::where('deals', 1)->count();
 
-        if ($deals >= 3) {
+        if (!$property->deals && $deals >= 3) {
             return redirect()->route('properties.index')->with([
                 'deals_error_message' => "Maximum of 3 deals."
             ]);

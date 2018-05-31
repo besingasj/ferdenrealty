@@ -14,6 +14,11 @@ class PageController extends Controller
     {
         $sliders = Property::where('featured', true)->limit(3)->get();
         $propertyListingThree = Property::where('deals', 1)->get();
+
+        if (count($propertyListingThree) < 1) {
+            $propertyListingThree = Property::limit(3)->get();
+        }
+
         $featuredProperties = Property::where('featured', true)->get();
         $agents = User::where('level', 'agent')->orderBy('id', 'desc')->get();
 
