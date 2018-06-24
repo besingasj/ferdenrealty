@@ -534,6 +534,41 @@ Properties for sale in the Philippines | @endsection
                     </div>
                     <!-- .container -->
                 </section>
+
+
+
+
+
+                <section class="partners partners-two">
+                    <div class="container">
+                        <div class="row zero-horizontal-margin">
+                            <div class="col-xs-12">
+                                <h3 class="title">
+                                    We are Working as <span>Partners</span> with Following Prestigious Companies.
+                                </h3>
+                                <ul class="list-grid-layout list-unstyled">
+                                    <li><a href="#"><img class="img-responsive" src="public/realplaces/images/camella.png" alt="Thumbnail"></a></li>
+                                    <li><a href="#"><img class="img-responsive" src="public/realplaces/images/lumina.png" alt="Thumbnail"></a></li>
+                                    <li><a href="#"><img class="img-responsive" src="public/realplaces/images/the_peak_of_havila.png" alt="Thumbnail"></a></li>
+                                    <li><a href="#"><img class="img-responsive" src="public/realplaces/images/austra_phil.png" alt="Thumbnail"></a></li>
+                                    <li><a href="#"><img class="img-responsive" src="public/realplaces/images/the_hive.png" alt="Thumbnail"></a></li>
+                                    <li><a href="#"><img class="img-responsive" src="public/realplaces/images/haustalk.png" alt="Thumbnail"></a></li>
+                                    <li><a href="#"><img class="img-responsive" src="public/realplaces/images/amarilo_crest.png" alt="Thumbnail"></a></li>
+                                    <li><a href="#"><img class="img-responsive" src="public/realplaces/images/dmci.png" alt="Thumbnail"></a></li>
+                                    <li><a href="#"><img class="img-responsive" src="public/realplaces/images/smdc.png" alt="Thumbnail"></a></li>
+                                    <li><a href="#"><img class="img-responsive" src="public/realplaces/images/grand_monaco.png" alt="Thumbnail"></a></li>
+                                    <li><a href="#"><img class="img-responsive" src="public/realplaces/images/summer_field.png" alt="Thumbnail"></a></li>
+                                    <li><a href="#"><img class="img-responsive" src="public/realplaces/images/muzon.png" alt="Thumbnail"></a></li>
+                                    <li><a href="#"><img class="img-responsive" src="public/realplaces/images/sun_valley.png" alt="Thumbnail"></a></li>
+                                    <li><a href="#"><img class="img-responsive" src="public/realplaces/images/sta_lucia_land.png" alt="Thumbnail"></a></li>
+                                    <li><a href="#"><img class="img-responsive" src="public/realplaces/images/havila.png" alt="Thumbnail"></a></li>
+                                    <li><a href="#"><img class="img-responsive" src="public/realplaces/images/axeia.png" alt="Thumbnail"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- .container -->
+                </section>
             </main>
             <!-- .site-main -->
         </div>
