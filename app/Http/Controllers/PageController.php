@@ -64,6 +64,42 @@ class PageController extends Controller
         ]);
     }
 
+    public function type($type = null)
+    {
+        if ($type == "houseandlot") {
+            $type = "House and Lot";
+        }
+
+        if ($type == "commercialspace") {
+            $type = "Commercial Space";
+        }
+
+        if ($type == "Condo" || $type == "Condominium" || $type == "condo") {
+            $type = "Condo";
+        }
+
+        $types = [
+            'House and Lot',
+            'Condo',
+            'Commercial Space'
+        ];
+
+        if (!in_array($type, $types)) {
+            return redirect('/');
+        }
+
+        $properties = Property::where('type', $type)->get();
+
+        if (is_null($properties)) {
+            return redirect('/');
+        }
+
+        return view('realplaces.property_type', [
+            'properties' => $properties,
+            'type' => $type
+        ]);
+    }
+
     public function propertyDetails($property_id)
     {
         $property = Property::where('property_id', $property_id)->first();

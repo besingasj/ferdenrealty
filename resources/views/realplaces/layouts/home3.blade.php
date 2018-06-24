@@ -233,13 +233,13 @@
                             <h3 class="widget-title">Property Types</h3>
                             <ul>
                                 <li>
-                                    <a href="#">House N Lot</a>
+                                    <a href="{{ route('page.properties.type', ['type' => 'houseandlot']) }}">House N Lot</a>
                                 </li>
                                 <li>
-                                    <a href="#">Commercial Space</a>
+                                    <a href="{{ route('page.properties.type', ['type' => 'commercialspace']) }}">Commercial Space</a>
                                 </li>
                                 <li>
-                                    <a href="#">Condo</a>
+                                    <a href="{{ route('page.properties.type', ['type' => 'condo']) }}">Condo</a>
                                 </li>
                             </ul>
                         </section>
